@@ -19,14 +19,14 @@ class home extends DC_controller {
 	 function index(){
 		$data = $this->controller_attr;
 		$data['function']='home';
-		$data['page'] = $this->load->view('home/index',$data,true);
+		
 
 		 $data = array(
 			 'title' => 'Rumah Sentul',
 			 'description' => 'Jual Rumah di sentul',
 			 'keywords' => 'rumah,dijual'
 		 );
-
+		$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 	
