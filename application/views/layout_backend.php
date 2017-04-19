@@ -3,11 +3,13 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
-<title><?php echo $controller_name; if($method!='index'){echo" - ";} echo $method; ?> | Decode</title>
+<title><?php  echo $method; if($method!='index'){echo" - ";} echo $controller_name;  ?> | <?php echo $this->appearance->name ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta content="" name="description" />
 <meta content="" name="author" />
 <!-- BEGIN PLUGIN CSS -->
+
+<link rel="icon" type="image/png" href="<?php echo base_url()."assets/uploads/settings/favicon.png" ?>" sizes="16x16">
 <link href="<?php echo base_url() ?>assets/plugins/bootstrap-select2/select2.css" rel="stylesheet" type="text/css" media="screen"/>
 
 <link href="<?php echo base_url() ?>assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -44,7 +46,7 @@
           </a> </li>
       </ul>
       <!-- BEGIN LOGO -->
-      <a href="<?php echo base_url() ?>admin"><img src="<?php echo base_url() ?>assets/img/logo.png" class="logo" alt=""  data-src="<?php echo base_url() ?>assets/img/logo.png" data-src-retina="<?php echo base_url() ?>assets/img/logo2x.png" width="100px" /></a>
+      <a href="<?php echo base_url() ?>admin"><img src="<?php echo base_url() ?>assets/img/logo.png" class="logo" alt=""  data-src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" data-src-retina="<?php echo base_url() ?>assets/img/logo2x.png" width="100px" /></a>
       <!-- END LOGO -->
       <ul class="nav pull-right notifcation-center">
         <li class="dropdown" id="header_task_bar"> <a href="<?php echo base_url() ?>admin" class="dropdown-toggle active" data-toggle="">
@@ -171,6 +173,7 @@
   <!-- END SIDEBAR -->
   <!-- BEGIN PAGE CONTAINER-->
   <div class="page-content">
+  <img id="loading-image" src="<?php echo base_url() ?>assets/img/loading.gif">
     <div class="content">
       <ul class="breadcrumb">
         <li>
@@ -190,7 +193,8 @@
 <script src="<?php echo base_url() ?>assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
 <!-- END CORE JS FRAMEWORK -->
 <!-- BEGIN PAGE LEVEL JS -->
-<script src="<?php echo base_url() ?>assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>    
+<script src="<?php echo base_url() ?>assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script> 
+<script src="<?php echo base_url() ?>assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>assets/plugins/bootstrap-select2/select2.min.js" type="text/javascript"></script>
@@ -200,6 +204,7 @@
 <script type="text/javascript" src="<?php echo base_url() ?>assets/plugins/datatables-responsive/js/lodash.min.js"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <script src="<?php echo base_url() ?>assets/js/datatables.js" type="text/javascript"></script>
+<script src="<?php echo base_url() ?>assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
 <!-- BEGIN CORE TEMPLATE JS -->
 
 
