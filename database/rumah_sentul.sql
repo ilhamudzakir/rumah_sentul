@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2017 at 08:32 AM
+-- Generation Time: Apr 19, 2017 at 04:05 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -17,8 +17,56 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `rumah_sentul`
+-- Database: `core_decode`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_appearance`
+--
+
+CREATE TABLE `dc_appearance` (
+  `id` int(100) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `logo` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_appearance`
+--
+
+INSERT INTO `dc_appearance` (`id`, `name`, `logo`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Decode', 'logo.png', '0000-00-00 00:00:00', '2017-04-17 15:25:23', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_contact`
+--
+
+CREATE TABLE `dc_contact` (
+  `id` int(100) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `subject` varchar(250) NOT NULL,
+  `content` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_contact`
+--
+
+INSERT INTO `dc_contact` (`id`, `name`, `email`, `subject`, `content`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'dsa', 'dsadas@dsada.com', 'asdasd', 'dsadasda ds sad sa', '2017-04-17 00:00:00', '2017-04-17 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -107,7 +155,8 @@ INSERT INTO `dc_icons` (`id`, `name_icons`, `date_created`, `date_modified`, `id
 (27, 'fa fa-bullseye', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (28, 'fa fa-calendar', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
 (29, 'fa fa-calendar-o', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
-(30, 'fa fa-camera', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0);
+(30, 'fa fa-camera', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0),
+(31, 'fa fa-envelope', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -135,12 +184,16 @@ CREATE TABLE `dc_menu` (
 INSERT INTO `dc_menu` (`id`, `name_menu`, `sub_menu`, `target`, `icon`, `position`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
 (1, 'Content', '0', 'admin_content', 'icon-custom-thumb', 1, '0000-00-00 00:00:00', '2017-04-13 11:13:46', 0, 1),
 (2, 'Static Page', '1', 'static_page', '', 1, '2017-04-06 10:24:25', '2017-04-06 12:29:26', 1, 1),
-(3, 'Settings System', '0', 'setting_system', 'icon-custom-settings', 2, '2017-04-13 00:00:00', '0000-00-00 00:00:00', 1, 0),
+(3, 'Settings System', '0', 'setting_system', 'icon-custom-settings', 3, '2017-04-13 00:00:00', '0000-00-00 00:00:00', 1, 0),
 (4, 'Menu', '3', 'menu', '', 1, '2017-04-13 00:00:00', '2017-04-13 00:00:00', 1, 0),
 (6, 'User Accsess', '3', 'user_accsess', 'fa fa-bars', 3, '0000-00-00 00:00:00', '2017-04-13 11:15:14', 0, 1),
 (7, 'User Groups', '3', 'user_groups', 'none', 4, '2017-04-13 11:15:03', NULL, 1, NULL),
 (8, 'User', '3', 'user', 'none', 2, '2017-04-16 18:04:14', NULL, 1, NULL),
-(9, 'News', '1', 'news', 'none', 2, '2017-04-17 13:23:58', NULL, 1, NULL);
+(9, 'News', '1', 'news', 'none', 2, '2017-04-17 13:23:58', NULL, 1, NULL),
+(10, 'appearance', '3', 'appearance', 'none', 5, '2017-04-17 14:31:03', NULL, 1, NULL),
+(11, 'Message', '0', 'message', 'fa fa-envelope', 2, '0000-00-00 00:00:00', '2017-04-17 15:58:18', 0, 1),
+(12, 'Inbox', '11', 'inbox', 'none', 1, '2017-04-17 16:05:07', NULL, 1, NULL),
+(13, 'Compose', '11', 'compose', 'none', 2, '2017-04-17 16:05:40', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -179,7 +232,13 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 (28, 6, 5, 0),
 (29, 7, 5, 0),
 (30, 8, 1, 1),
-(31, 9, 1, 1);
+(31, 9, 1, 1),
+(32, 9, 5, 1),
+(33, 8, 5, 0),
+(34, 10, 1, 1),
+(35, 11, 1, 1),
+(36, 12, 1, 1),
+(37, 13, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -265,6 +324,18 @@ INSERT INTO `dc_user` (`id`, `username`, `password`, `email`, `first_name`, `las
 --
 
 --
+-- Indexes for table `dc_appearance`
+--
+ALTER TABLE `dc_appearance`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_contact`
+--
+ALTER TABLE `dc_contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dc_default`
 --
 ALTER TABLE `dc_default`
@@ -317,6 +388,16 @@ ALTER TABLE `dc_user`
 --
 
 --
+-- AUTO_INCREMENT for table `dc_appearance`
+--
+ALTER TABLE `dc_appearance`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `dc_contact`
+--
+ALTER TABLE `dc_contact`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `dc_default`
 --
 ALTER TABLE `dc_default`
@@ -330,17 +411,17 @@ ALTER TABLE `dc_groups`
 -- AUTO_INCREMENT for table `dc_icons`
 --
 ALTER TABLE `dc_icons`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `dc_menu`
 --
 ALTER TABLE `dc_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `dc_menu_accsess`
 --
 ALTER TABLE `dc_menu_accsess`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `dc_news`
 --
