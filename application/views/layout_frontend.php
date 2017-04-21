@@ -6,30 +6,30 @@
 <title><?php echo $title?> | <?php echo  $this->appearance->name ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name='robots' content='noindex, nofollow' />
-    <meta content="" name="title" />
-    <meta content="" name="author" />
+    <meta content="<?php echo $title?>" name="title" />
+    <meta content="<?php echo $site_name?>" name="author" />
     <meta name="language" content="indonesia">
 
     <!-- for Google -->
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="<?php echo $description?>" />
+    <meta name="keywords" content="<?php echo $keywords?>" />
 
-    <meta name="author" content="" />
-    <meta name="copyright" content="" />
-    <meta name="application-name" content="" />
+    <meta name="author" content="<?php echo $site_name?>" />
+    <meta name="copyright" content="<?php echo $site_name?>" />
+    <meta name="application-name" content="<?php echo $site_name?>" />
 
     <!-- for Facebook -->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="<?php echo $title?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:image" content="<?php echo $image?>" />
+    <meta property="og:url" content="<?php echo $site_name?>" />
+    <meta property="og:description" content="<?php echo $description?>" />
 
     <!-- for Twitter -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content="<?php echo $title?>" />
+    <meta name="twitter:description" content="<?php echo $description?>" />
+    <meta name="twitter:image" content="<?php echo $image?>" />
 
 
 </head>
