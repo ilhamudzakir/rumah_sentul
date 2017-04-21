@@ -53,6 +53,16 @@ class DC_Controller extends CI_Controller {
        return $data;
     }
 
+    function seo(){
+        $data = array(
+             'description' => 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com',
+             'keywords' => 'rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi',
+             'site_name' => 'RumahSentul.com',
+             'image' => 'RumahSentul.com',
+         );
+        return $data;
+    }
+
     function check_access(){
         if($this->session->userdata('admin')){
             $user_groups=$this->session->userdata['admin']['user_group'];
