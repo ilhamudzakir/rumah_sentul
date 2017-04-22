@@ -6,8 +6,8 @@
 <title><?php echo $title?> | <?php echo  $this->appearance->name ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name='robots' content='noindex, nofollow' />
-    <meta content="<?php echo $title?>" name="title" />
-    <meta content="<?php echo $site_name?>" name="author" />
+    <meta content="<?php echo $title ?>" name="title" />
+    <meta content="<?php echo $this->appearance->name ?>" name="author" />
     <meta name="language" content="indonesia">
 
     <!-- for Google -->

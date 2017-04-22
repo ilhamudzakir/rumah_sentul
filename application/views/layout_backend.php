@@ -153,11 +153,11 @@
         </li>
 <?php foreach ($menu as $submenu) { ?>
   <?php if( $submenu->sub_menu==0){?>
-        <li class=""> <a href="javascript:;"> <i class="<?php echo $submenu->icon ?>"></i> <span class="title"><?php echo $submenu->name_menu ?></span> <span class="arrow"></span> </a>
+        <li class="<?php if($submenu->target==$this->uri->segment(1)){echo"active open";} ?>"> <a href="javascript:;"> <i class="<?php echo $submenu->icon ?>"></i> <span class="title"><?php echo $submenu->name_menu ?></span> <span class="arrow <?php if($submenu->target==$this->uri->segment(1)){echo" open";} ?>"></span> </a>
           <ul class="sub-menu">
           <?php foreach ($menu as $data) {
             if( $data->sub_menu== $submenu->id){ ?>
-            <li > <a href="<?php echo base_url()."".$submenu->target."/".$data->target ?>"><?php echo $data->name_menu ?></a> </li>
+            <li class="<?php if($data->target==$this->uri->segment(2) or $data->target."_form"==$this->uri->segment(2)){echo"active";} ?>" > <a href="<?php echo base_url()."".$submenu->target."/".$data->target ?>"><?php echo $data->name_menu ?></a> </li>
           <?php } }?>
           </ul>
         <?php } ?>

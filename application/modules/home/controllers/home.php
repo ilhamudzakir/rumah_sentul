@@ -20,6 +20,13 @@ class home extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='home';
 		 /*Default Meta */
+		 $data=array(
+             'title'=>'rumahsentul.com',
+             'description' => 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com',
+             'keywords' => 'rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi',
+             'site_name' => 'RumahSentul.com',
+             'image' => 'RumahSentul.com',
+         );
 		$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

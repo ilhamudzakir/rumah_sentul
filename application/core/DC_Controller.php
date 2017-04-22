@@ -6,8 +6,10 @@ class DC_Controller extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        
         // DEFAULT TIME ZONE
         date_default_timezone_set('Asia/Jakarta');
+        
         // TABLE 
         $this->tbl_prefix = 'dc_';
         $this->tbl_static_content= $this->tbl_prefix . 'static_content';
@@ -20,11 +22,20 @@ class DC_Controller extends CI_Controller {
         $this->tbl_appearance= $this->tbl_prefix . 'appearance';
         $this->tbl_news= $this->tbl_prefix . 'news';
         $this->tbl_contact= $this->tbl_prefix . 'contact';
+        $this->tbl_banner= $this->tbl_prefix .'banner';
+        $this->tbl_unit= $this->tbl_prefix .'unit';
+        $this->tbl_category_unit= $this->tbl_prefix .'category_unit';
+        $this->tbl_condition= $this->tbl_prefix .'condition';
+        $this->tbl_transaction= $this->tbl_prefix .'transaction';
+        $this->tbl_brand= $this->tbl_prefix .'brand';
+        $this->tbl_cicilan_unit= $this->tbl_prefix .'cicilan_unit';
+        $this->tbl_album_unit= $this->tbl_prefix .'album_unit';
+        
+
+        //load model fo all page
         $this->load->model('model_basic');
 
-
-
-
+        //apperance function for all
         $this->appearance=select_where($this->tbl_appearance,'id',1)->row();
     }
 
@@ -53,15 +64,6 @@ class DC_Controller extends CI_Controller {
        return $data;
     }
 
-    function seo(){
-        $data = array(
-             'description' => 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com',
-             'keywords' => 'rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi',
-             'site_name' => 'RumahSentul.com',
-             'image' => 'RumahSentul.com',
-         );
-        return $data;
-    }
 
     function check_access(){
         if($this->session->userdata('admin')){
@@ -77,4 +79,6 @@ class DC_Controller extends CI_Controller {
             }
         }
     }
+
+
 }

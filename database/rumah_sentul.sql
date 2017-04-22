@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2017 at 04:05 AM
+-- Generation Time: Apr 22, 2017 at 09:52 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -17,8 +17,25 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `core_decode`
+-- Database: `rumah_sentul`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_album_unit`
+--
+
+CREATE TABLE `dc_album_unit` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `images` text NOT NULL,
+  `id_unit` int(11) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -42,6 +59,120 @@ CREATE TABLE `dc_appearance` (
 
 INSERT INTO `dc_appearance` (`id`, `name`, `logo`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
 (1, 'Decode', 'logo.png', '0000-00-00 00:00:00', '2017-04-17 15:25:23', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_banner`
+--
+
+CREATE TABLE `dc_banner` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `images` text NOT NULL,
+  `link` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_banner`
+--
+
+INSERT INTO `dc_banner` (`id`, `title`, `description`, `images`, `link`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'dsadas asd a', '<p>dsa dasd asd as<br></p>', 'traxex-drow-ranger-dota-2-hd-wallpaper--busya_sama-1366x768.jpg', ' sad asda das dasasa', '0000-00-00 00:00:00', '2017-04-22 17:06:12', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_brand`
+--
+
+CREATE TABLE `dc_brand` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `images` text NOT NULL,
+  `description` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_brand`
+--
+
+INSERT INTO `dc_brand` (`id`, `title`, `images`, `description`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Rozaki House', '2f9c3930a4974301933323c5af738b45.jpg', '<p>fasfas<br></p>', '2017-04-22 20:50:57', NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_category_unit`
+--
+
+CREATE TABLE `dc_category_unit` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `images` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_category_unit`
+--
+
+INSERT INTO `dc_category_unit` (`id`, `title`, `description`, `images`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Rumah', '<p>dasdsa<br></p>', 'dota_2-chaos_knight-barathrum-lycan-jakiro-assault-(296).jpg', '2017-04-22 20:39:14', NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_cicilan_unit`
+--
+
+CREATE TABLE `dc_cicilan_unit` (
+  `id` int(100) NOT NULL,
+  `dp` int(50) NOT NULL,
+  `lamanya` int(50) NOT NULL,
+  `price` int(50) NOT NULL,
+  `id_unit` int(250) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_condition`
+--
+
+CREATE TABLE `dc_condition` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_condition`
+--
+
+INSERT INTO `dc_condition` (`id`, `title`, `description`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Second', '<p>dasdsa<br></p>', '2017-04-22 20:55:54', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -193,7 +324,14 @@ INSERT INTO `dc_menu` (`id`, `name_menu`, `sub_menu`, `target`, `icon`, `positio
 (10, 'appearance', '3', 'appearance', 'none', 5, '2017-04-17 14:31:03', NULL, 1, NULL),
 (11, 'Message', '0', 'message', 'fa fa-envelope', 2, '0000-00-00 00:00:00', '2017-04-17 15:58:18', 0, 1),
 (12, 'Inbox', '11', 'inbox', 'none', 1, '2017-04-17 16:05:07', NULL, 1, NULL),
-(13, 'Compose', '11', 'compose', 'none', 2, '2017-04-17 16:05:40', NULL, 1, NULL);
+(13, 'Compose', '11', 'compose', 'none', 2, '2017-04-17 16:05:40', NULL, 1, NULL),
+(14, 'Banner', '1', 'banner', 'none', 3, '2017-04-22 16:51:32', NULL, 1, NULL),
+(15, 'Admin Unit', '0', 'admin_unit', 'fa fa-building', 2, '2017-04-22 17:14:56', NULL, 1, NULL),
+(16, 'Unit', '15', 'unit', 'none', 1, '2017-04-22 17:43:35', NULL, 1, NULL),
+(17, 'Category Unit', '15', 'category_unit', 'none', 2, '2017-04-22 17:43:53', NULL, 1, NULL),
+(18, 'Codition', '15', 'condition', 'none', 3, '2017-04-22 17:44:11', NULL, 1, NULL),
+(19, 'Transaction', '15', 'transaction', 'none', 4, '2017-04-22 17:44:33', NULL, 1, NULL),
+(20, 'Brand', '15', 'brand', 'none', 5, '2017-04-22 17:44:46', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -238,7 +376,25 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 (34, 10, 1, 1),
 (35, 11, 1, 1),
 (36, 12, 1, 1),
-(37, 13, 1, 1);
+(37, 13, 1, 1),
+(38, 14, 1, 1),
+(39, 14, 5, 0),
+(40, 10, 5, 0),
+(41, 11, 5, 0),
+(42, 12, 5, 0),
+(43, 13, 5, 0),
+(44, 15, 1, 1),
+(45, 16, 1, 1),
+(46, 17, 1, 1),
+(47, 18, 1, 1),
+(48, 19, 1, 1),
+(49, 20, 1, 1),
+(50, 15, 5, 0),
+(51, 16, 5, 0),
+(52, 17, 5, 0),
+(53, 18, 5, 0),
+(54, 19, 5, 0),
+(55, 20, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -293,6 +449,59 @@ INSERT INTO `dc_static_content` (`id`, `title`, `images`, `content`, `date_creat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dc_transaction`
+--
+
+CREATE TABLE `dc_transaction` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `description` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_transaction`
+--
+
+INSERT INTO `dc_transaction` (`id`, `title`, `description`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Sewa', '<p>dasds ad sa<br></p>', '2017-04-22 20:59:55', NULL, 1, NULL),
+(2, 'Jual', '', '2017-04-22 21:00:08', NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_unit`
+--
+
+CREATE TABLE `dc_unit` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `id_category` int(15) NOT NULL,
+  `id_condition` int(15) NOT NULL,
+  `id_brand` int(15) NOT NULL,
+  `id_transaction` int(15) NOT NULL,
+  `price_offer` int(1) DEFAULT NULL,
+  `description` text NOT NULL,
+  `price` int(15) NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_unit`
+--
+
+INSERT INTO `dc_unit` (`id`, `title`, `id_category`, `id_condition`, `id_brand`, `id_transaction`, `price_offer`, `description`, `price`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Sentul 1A', 1, 2, 1, 2, NULL, '<p>sdaasdda&nbsp;&nbsp;&nbsp;&nbsp;<p><br></p></p>', 1000000, '2017-04-23 00:56:46', NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_user`
 --
 
@@ -324,9 +533,45 @@ INSERT INTO `dc_user` (`id`, `username`, `password`, `email`, `first_name`, `las
 --
 
 --
+-- Indexes for table `dc_album_unit`
+--
+ALTER TABLE `dc_album_unit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dc_appearance`
 --
 ALTER TABLE `dc_appearance`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_banner`
+--
+ALTER TABLE `dc_banner`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_brand`
+--
+ALTER TABLE `dc_brand`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_category_unit`
+--
+ALTER TABLE `dc_category_unit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_cicilan_unit`
+--
+ALTER TABLE `dc_cicilan_unit`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_condition`
+--
+ALTER TABLE `dc_condition`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -378,6 +623,18 @@ ALTER TABLE `dc_static_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dc_transaction`
+--
+ALTER TABLE `dc_transaction`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `dc_unit`
+--
+ALTER TABLE `dc_unit`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dc_user`
 --
 ALTER TABLE `dc_user`
@@ -388,10 +645,40 @@ ALTER TABLE `dc_user`
 --
 
 --
+-- AUTO_INCREMENT for table `dc_album_unit`
+--
+ALTER TABLE `dc_album_unit`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `dc_appearance`
 --
 ALTER TABLE `dc_appearance`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `dc_banner`
+--
+ALTER TABLE `dc_banner`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `dc_brand`
+--
+ALTER TABLE `dc_brand`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `dc_category_unit`
+--
+ALTER TABLE `dc_category_unit`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `dc_cicilan_unit`
+--
+ALTER TABLE `dc_cicilan_unit`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `dc_condition`
+--
+ALTER TABLE `dc_condition`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `dc_contact`
 --
@@ -416,12 +703,12 @@ ALTER TABLE `dc_icons`
 -- AUTO_INCREMENT for table `dc_menu`
 --
 ALTER TABLE `dc_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `dc_menu_accsess`
 --
 ALTER TABLE `dc_menu_accsess`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `dc_news`
 --
@@ -432,6 +719,16 @@ ALTER TABLE `dc_news`
 --
 ALTER TABLE `dc_static_content`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `dc_transaction`
+--
+ALTER TABLE `dc_transaction`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `dc_unit`
+--
+ALTER TABLE `dc_unit`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_user`
 --
