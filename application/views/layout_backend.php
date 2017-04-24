@@ -46,7 +46,7 @@
           </a> </li>
       </ul>
       <!-- BEGIN LOGO -->
-      <a href="<?php echo base_url() ?>admin"><img src="<?php echo base_url() ?>assets/img/logo.png" class="logo" alt=""  data-src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" data-src-retina="<?php echo base_url() ?>assets/img/logo2x.png" width="100px" /></a>
+      <a href="<?php echo base_url() ?>admin"><img src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?> class="logo" alt=""  data-src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" data-src-retina="<<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" height="40px" style="margin-top: 10px" /></a>
       <!-- END LOGO -->
       <ul class="nav pull-right notifcation-center">
         <li class="dropdown" id="header_task_bar"> <a href="<?php echo base_url() ?>admin" class="dropdown-toggle active" data-toggle="">

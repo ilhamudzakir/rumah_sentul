@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2017 at 09:52 PM
+-- Generation Time: Apr 24, 2017 at 11:36 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -37,6 +37,13 @@ CREATE TABLE `dc_album_unit` (
   `id_modifier` int(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `dc_album_unit`
+--
+
+INSERT INTO `dc_album_unit` (`id`, `title`, `images`, `id_unit`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(4, 'ds ad d as', '2f9c3930a4974301933323c5af738b45.jpg', 1, '2017-04-24 12:20:14', NULL, 1, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,7 @@ CREATE TABLE `dc_appearance` (
 --
 
 INSERT INTO `dc_appearance` (`id`, `name`, `logo`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(1, 'Decode', 'logo.png', '0000-00-00 00:00:00', '2017-04-17 15:25:23', 0, 1);
+(1, 'Rumah Rumah Sentul', 'LOGO_RUMAHSENTUL.png', '0000-00-00 00:00:00', '2017-04-24 16:25:31', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +90,8 @@ CREATE TABLE `dc_banner` (
 --
 
 INSERT INTO `dc_banner` (`id`, `title`, `description`, `images`, `link`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(1, 'dsadas asd a', '<p>dsa dasd asd as<br></p>', 'traxex-drow-ranger-dota-2-hd-wallpaper--busya_sama-1366x768.jpg', ' sad asda das dasasa', '0000-00-00 00:00:00', '2017-04-22 17:06:12', 0, 1);
+(2, 'Rumah Murah', '<p>dasdasdsa<br></p>', 'bg1.jpg', '', '2017-04-24 15:15:17', NULL, 1, NULL),
+(3, 'drow ranger', '<p>dasdas<br></p>', 'dota_2-chaos_knight-barathrum-lycan-jakiro-assault-(296).jpg', '', '2017-04-24 15:17:32', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -648,7 +656,7 @@ ALTER TABLE `dc_user`
 -- AUTO_INCREMENT for table `dc_album_unit`
 --
 ALTER TABLE `dc_album_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `dc_appearance`
 --
@@ -658,7 +666,7 @@ ALTER TABLE `dc_appearance`
 -- AUTO_INCREMENT for table `dc_banner`
 --
 ALTER TABLE `dc_banner`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `dc_brand`
 --
@@ -678,7 +686,7 @@ ALTER TABLE `dc_cicilan_unit`
 -- AUTO_INCREMENT for table `dc_condition`
 --
 ALTER TABLE `dc_condition`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_contact`
 --

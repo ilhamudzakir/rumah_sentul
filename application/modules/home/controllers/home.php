@@ -20,26 +20,13 @@ class home extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='home';
 		 /*Default Meta */
-		 $data=array(
-             'title'=>'rumahsentul.com',
-             'description' => 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com',
-             'keywords' => 'rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi',
-             'site_name' => 'RumahSentul.com',
-             'image' => 'RumahSentul.com',
-         );
-		$data['page'] = $this->load->view('home/index',$data,true);
-		$this->load->view('layout_frontend',$data);
-	}
-
-	function detail($id){
-		$data = $this->controller_attr;
-		$data['function']='home';
-		$data = array(
-			 'title' => 'Rumah Sentul',
-			 'description' => 'Jual Rumah di sentul',
-			 'keywords' => 'rumah,dijual'
-		 );
-
+		 $data['meta_title']='rumah rumah sentul';
+		     $data['meta_description'] = 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com';
+          $data['meta_keywords'] ='rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi';
+          $data['meta_site_name'] ='RumahSentul.com';
+          $data['meta_image']='RumahSentul.com';
+         
+        $data['banner']=select_all($this->tbl_banner);
 		$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

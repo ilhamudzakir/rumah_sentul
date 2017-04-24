@@ -3,10 +3,13 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
-<title>Login - Administrator</title>
+<title><?php  echo $method; if($method!='index'){echo" - ";} echo $controller_name;  ?> | <?php echo $this->appearance->name ?></title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta content="" name="description" />
 <meta content="" name="author" />
+<!-- BEGIN PLUGIN CSS -->
+
+<link rel="icon" type="image/png" href="<?php echo base_url()."assets/uploads/settings/favicon.png" ?>" sizes="16x16">
 <!-- BEGIN CORE CSS FRAMEWORK -->
 <link href="<?php echo base_url() ?>assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
 <link href="<?php echo base_url() ?>assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
