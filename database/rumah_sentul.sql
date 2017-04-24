@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 11:36 AM
+-- Generation Time: Apr 24, 2017 at 12:04 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -36,13 +36,6 @@ CREATE TABLE `dc_album_unit` (
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `dc_album_unit`
---
-
-INSERT INTO `dc_album_unit` (`id`, `title`, `images`, `id_unit`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(4, 'ds ad d as', '2f9c3930a4974301933323c5af738b45.jpg', 1, '2017-04-24 12:20:14', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -158,6 +151,13 @@ CREATE TABLE `dc_cicilan_unit` (
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_cicilan_unit`
+--
+
+INSERT INTO `dc_cicilan_unit` (`id`, `dp`, `lamanya`, `price`, `id_unit`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 2147483647, 12, 10000000, 1, '2017-04-24 17:02:45', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -681,7 +681,7 @@ ALTER TABLE `dc_category_unit`
 -- AUTO_INCREMENT for table `dc_cicilan_unit`
 --
 ALTER TABLE `dc_cicilan_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_condition`
 --

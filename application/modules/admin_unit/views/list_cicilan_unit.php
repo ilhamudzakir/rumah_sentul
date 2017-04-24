@@ -16,11 +16,18 @@
               <div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="javascript:;" class="reload"></a> </div>
             </div>
             <div class="grid-body ">
-              <table class="table" id="list_data" >
+              <table class="table" id="example2" >
+              <div style="margin-bottom: 10px;">
+              <a style="" id="add_button" href="<?php echo base_url() ?>admin_unit/cicilan_unit_form/?id_unit=<?php echo $this->uri->segment('3') ?>">
+<button class="btn btn-primary" style="" >Add Cicilan</button>
+</a>
+</div>
                 <thead>
                   <tr>
                   <th>No</th>
-                    <th>Title</th>
+                    <th>DP</th>
+                     <th>Lamanya</th>
+                     <th>Price</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -32,10 +39,10 @@
                 ?>
                   <tr >
                     <td><?php echo $no ?></td>
-                    <td><?php echo $data->title ?></td>
+                    <td>Rp. <?php echo $data->dp ?></td>
+                    <td><?php echo $data->lamanya ?> Bulan</td>
+                    <td>Rp. <?php echo $data->price ?></td>
                     <td>
-                    <a href="<?php echo base_url()."".$controller."/album_unit/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Album" class="btn btn-info btn-xs btn-mini tip" type="button"><i class="fa fa-picture-o"></i></button></a>
-                   <a href="<?php echo base_url()."".$controller."/cicilan_unit/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Cicilan" class="btn btn-info btn-xs btn-mini tip" type="button"><i class="fa fa-credit-card"></i></button></a>
                     <a href="<?php echo base_url()."".$controller."/".$function."_form/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Edit" class="btn btn-warning btn-xs btn-mini tip" type="button"><i class="fa fa-pencil"></i></button></a> 
                     <button id="del<?php echo $data->id ?>"  data-toggle="tooltip" data-original-title="Delete" onclick="pasdel_id('<?php echo $data->id ?>')" class="delete btn btn-danger btn-xs btn-mini tip" type="button"><i class="fa fa-times"></i></button> </td>
                   </tr>

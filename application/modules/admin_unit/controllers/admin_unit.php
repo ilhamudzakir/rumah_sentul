@@ -649,5 +649,85 @@ class admin_unit extends DC_controller {
 			$this->session->set_flashdata('msg','Your data not deleted');
 		}
 	}
+	function cicilan_unit(){
+		$this->check_access();
+		$data = $this->controller_attr;
+		$data['function']='cicilan_unit';
+		$data['list']=select_all($this->tbl_cicilan_unit);
+		$data['page'] = $this->load->view('admin_unit/list_cicilan_unit',$data,true);
+		$this->load->view('layout_backend',$data);
+	}
+
+	function cicilan_unit_form($id=null){
+		$this->check_access();
+		$data = $this->controller_attr;
+		$data['function']='cicilan_unit';
+		if ($id) {
+            $data['data'] = select_where($this->tbl_cicilan_unit, 'id', $id)->row();
+        }
+        else{
+            $data['data'] = null;
+        }
+        
+		$data['page'] = $this->load->view('admin_unit/cicilan_unit_form',$data,true);
+		$this->load->view('layout_backend',$data);
+	}
+
+	function cicilan_unit_update(){
+		$data = $this->controller_attr;
+		$data['function']='cicilan_unit';
+		$id=$this->input->post('id');
+		$table_field = $this->db->list_fields($this->tbl_cicilan_unit);
+		$cicilan_unit=select_where($this->tbl_condition,'id',$id)->row();
+		$update = array();
+        foreach ($table_field as $field) {
+            $update[$field] = $this->input->post($field);
+        }
+        $update['date_modified']= date("Y-m-d H:i:s");
+        $update['id_modifier']=$this->session->userdata['admin']['id'];
+        $query=update($this->tbl_cicilan_unit,$update,'id',$id);
+		if($query){
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been updated');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not updated');
+		}
+		redirect($data['controller']."/".$data['function']);
+	}
+
+	function cicilan_unit_add(){
+		$data = $this->controller_attr;
+		$data['function']='cicilan_unit';
+		$table_field = $this->db->list_fields($this->tbl_cicilan_unit);
+		$insert = array();
+        foreach ($table_field as $field) {
+            $insert[$field] = $this->input->post($field);
+        }
+        $insert['date_created']= date("Y-m-d H:i:s");
+        $insert['id_creator']=$this->session->userdata['admin']['id'];
+        $query=insert_all($this->tbl_cicilan_unit,$insert);
+		if($query){
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been added');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not added');
+		}
+		redirect($data['controller']."/".$data['function']);
+	}
+
+	function cicilan_unit_delete($id){
+		$data = $this->controller_attr;
+		$function='cicilan_unit';
+		$query=delete($this->tbl_cicilan_unit,'id',$id);
+		if($query){
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been deleted');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not deleted');
+		}
+	}
 }
 
