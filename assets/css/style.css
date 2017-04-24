@@ -8253,3 +8253,9 @@ input[type="file"] {
   border-top:3px solid #1b1e24; 
   margin-bottom: 20px
 }
+.gallery-list{
+  margin-top: 30px;
+}
+.footer-gallery{
+  width: 100%; height: auto; padding:5px;background: #000
+}
