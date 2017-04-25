@@ -32,10 +32,10 @@
         </div>
 
                       <div class="form-group">
-                        <label class="form-label">Content</label>
+                        <label class="form-label">Description</label>
                        
                         <div class="controls">
-                           <textarea id="summernote" name="content" placeholder="Enter text ..." class="form-control" rows="10"><?php if(isset($data)){ echo $data->content; } ?></textarea>
+                           <textarea id="summernote" name="description" placeholder="Enter text ..." class="form-control" rows="10"><?php if(isset($data)){ echo $data->description; } ?></textarea>
                         </div>
                       </div>
                       <div class="form-group">
