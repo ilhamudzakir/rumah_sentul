@@ -80,7 +80,7 @@
                             <div class="header-column">
                                 <div class="header-logo">
                                     <a href="index-2.html">
-                                        <img alt="Porto" width="80px" src="<?php echo base_url() ?>assets/theme/img/sentul/LOGO_RUMAHSENTUL.png">
+                                        <img alt="Porto" width="80px" src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>">
                                     </a>
                                 </div>
                             </div>

@@ -96,6 +96,7 @@
 }
 .title-footer{
 	margin-bottom: 20px;
+	border-bottom:2px solid #fcc540;
 }
 .subscribe{
 	border: 1px #e1e1e1 solid;

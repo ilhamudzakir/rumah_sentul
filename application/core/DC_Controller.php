@@ -30,6 +30,7 @@ class DC_Controller extends CI_Controller {
         $this->tbl_brand= $this->tbl_prefix .'brand';
         $this->tbl_cicilan_unit= $this->tbl_prefix .'cicilan_unit';
         $this->tbl_album_unit= $this->tbl_prefix .'album_unit';
+        $this->tbl_event= $this->tbl_prefix .'event';
         
 
         //load model fo all page
