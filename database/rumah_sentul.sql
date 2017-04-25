@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 12:04 PM
+-- Generation Time: Apr 25, 2017 at 06:08 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.23
 
@@ -225,6 +225,25 @@ CREATE TABLE `dc_default` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dc_event`
+--
+
+CREATE TABLE `dc_event` (
+  `id` int(100) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `images` text NOT NULL,
+  `description` text NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(250) NOT NULL,
+  `id_modifier` int(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_groups`
 --
 
@@ -339,7 +358,8 @@ INSERT INTO `dc_menu` (`id`, `name_menu`, `sub_menu`, `target`, `icon`, `positio
 (17, 'Category Unit', '15', 'category_unit', 'none', 2, '2017-04-22 17:43:53', NULL, 1, NULL),
 (18, 'Codition', '15', 'condition', 'none', 3, '2017-04-22 17:44:11', NULL, 1, NULL),
 (19, 'Transaction', '15', 'transaction', 'none', 4, '2017-04-22 17:44:33', NULL, 1, NULL),
-(20, 'Brand', '15', 'brand', 'none', 5, '2017-04-22 17:44:46', NULL, 1, NULL);
+(20, 'Brand', '15', 'brand', 'none', 5, '2017-04-22 17:44:46', NULL, 1, NULL),
+(21, 'Event', '1', 'event', 'none', 4, '2017-04-24 20:52:21', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -386,7 +406,7 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 (36, 12, 1, 1),
 (37, 13, 1, 1),
 (38, 14, 1, 1),
-(39, 14, 5, 0),
+(39, 14, 5, 1),
 (40, 10, 5, 0),
 (41, 11, 5, 0),
 (42, 12, 5, 0),
@@ -402,7 +422,9 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 (52, 17, 5, 0),
 (53, 18, 5, 0),
 (54, 19, 5, 0),
-(55, 20, 5, 0);
+(55, 20, 5, 0),
+(56, 21, 1, 1),
+(57, 21, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -595,6 +617,12 @@ ALTER TABLE `dc_default`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dc_event`
+--
+ALTER TABLE `dc_event`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dc_groups`
 --
 ALTER TABLE `dc_groups`
@@ -656,7 +684,7 @@ ALTER TABLE `dc_user`
 -- AUTO_INCREMENT for table `dc_album_unit`
 --
 ALTER TABLE `dc_album_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `dc_appearance`
 --
@@ -698,6 +726,11 @@ ALTER TABLE `dc_contact`
 ALTER TABLE `dc_default`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `dc_event`
+--
+ALTER TABLE `dc_event`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `dc_groups`
 --
 ALTER TABLE `dc_groups`
@@ -711,12 +744,12 @@ ALTER TABLE `dc_icons`
 -- AUTO_INCREMENT for table `dc_menu`
 --
 ALTER TABLE `dc_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `dc_menu_accsess`
 --
 ALTER TABLE `dc_menu_accsess`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `dc_news`
 --
