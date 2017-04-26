@@ -27,6 +27,7 @@ class home extends DC_controller {
           $data['meta_image']='RumahSentul.com';
          
         $data['banner']=select_all($this->tbl_banner);
+        $data['list']= select_all($this->tbl_unit);
 		$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

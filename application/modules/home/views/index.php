@@ -89,6 +89,12 @@
                                 
                                 <div id="tabs-1">
                                     <div class="row mt-lg">
+                                        
+<?php
+                $no=0;
+                foreach ($list as $data) {
+                $no++;
+                ?>
                                         <div class="col-sm-4 pb-xlg">
 
                                             <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
@@ -98,8 +104,8 @@
                                                     </span>
                                                     <span class="thumb-info-caption">
                                                         <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                                            <h2 class="mb-md mt-xs"><?php echo $data->title ?></h2>
+                                                            <p class="font-size-md"><?php echo $data->description ?></p>
                                                             <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
                                                         </span>
                                                     </span>
@@ -107,96 +113,9 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-sm-4 pb-xlg">
+                                    <?php
 
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
-                                                    <span class="thumb-info-side-image-wrapper p-none">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/rumah.jpg" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption">
-                                                        <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                            <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-4 pb-xlg">
-
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="600">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
-                                                    <span class="thumb-info-side-image-wrapper p-none">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/ruko.jpg" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption">
-                                                        <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                            <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-4 pb-xlg">
-
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
-                                                    <span class="thumb-info-side-image-wrapper p-none">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/test.jpg" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption">
-                                                        <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                            <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-4 pb-xlg">
-
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
-                                                    <span class="thumb-info-side-image-wrapper p-none">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/rumah.jpg" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption">
-                                                        <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                            <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-sm-4 pb-xlg">
-
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="600">
-                                                <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
-                                                    <span class="thumb-info-side-image-wrapper p-none">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/ruko.jpg" class="img-responsive" alt="">
-                                                    </span>
-                                                    <span class="thumb-info-caption">
-                                                        <span class="thumb-info-caption-text">
-                                                            <h2 class="mb-md mt-xs">Spring Mountain Residence Sentul City</h2>
-                                                            <p class="font-size-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                                                            <a class="btn btn-primary mt-md" href="demo-restaurant-menu.html">View More <i class="fa fa-long-arrow-right"></i></a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-
-                                        </div>
+                                }?>
                                         
                                     </div>
                                 </div>
