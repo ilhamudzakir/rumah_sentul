@@ -475,7 +475,11 @@ a, a:hover, a:focus {
     border-left: 4px solid #fbc53f;
     margin-right: 5px; 
 }
-
+.btn-primary:hover{
+    border-color: #fcc540;
+    background: #fff;
+    color: #fcc540;
+}
 @media only screen and (min-width: 768px){
 	.contact-form button.btn.btn-action {
 		float: right;
