@@ -52,3 +52,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//static Page
+require_once( BASEPATH .'database/DB'. EXT );
+$db =& DB();
+$static_page='dc_static_content';
+$query = $db->query("SELECT * from ".$static_page);
+$result = $query->result();
+foreach( $result as $key )
+{
+	$route[ ''.str_replace(' ','-',$key->title)] = 'static_page/main/'.$key->id;
+	
+	
+}

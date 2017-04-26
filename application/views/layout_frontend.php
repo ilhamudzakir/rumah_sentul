@@ -8,25 +8,25 @@
     <meta name='robots' content='noindex, nofollow' />
     <meta content="" name="title" />
     <meta content="" name="author" />
-    <meta content="<?php echo $meta_title?>" name="title" />
+   <!--  <meta content="<?php echo $meta_title?>" name="title" />
     <meta content="<?php echo $meta_site_name?>" name="author" />
-    <meta name="language" content="indonesia">
+    <meta name="language" content="indonesia"> -->
 
     <!-- for Google -->
-    <meta name="description" content="" />
+  <!--   <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="description" content="<?php echo $meta_description?>" />
-    <meta name="keywords" content="<?php echo $meta_keywords?>" />
+    <meta name="keywords" content="<?php echo $meta_keywords?>" /> -->
 
-    <meta name="author" content="" />
+  <!--   <meta name="author" content="" />
     <meta name="copyright" content="" />
     <meta name="application-name" content="" />
     <meta name="author" content="<?php echo $meta_site_name?>" />
     <meta name="copyright" content="<?php echo $meta_site_name?>" />
-    <meta name="application-name" content="<?php echo $meta_site_name?>" />
+    <meta name="application-name" content="<?php echo $meta_site_name?>" /> -->
 
     <!-- for Facebook -->
-    <meta property="og:title" content="" />
+    <!-- <meta property="og:title" content="" />
     <meta property="og:title" content="<?php echo $meta_title?>" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="" />
@@ -34,16 +34,16 @@
     <meta property="og:description" content="" />
     <meta property="og:image" content="<?php echo $meta_image?>" />
     <meta property="og:url" content="<?php echo $meta_site_name?>" />
-    <meta property="og:description" content="<?php echo $meta_description?>" />
+    <meta property="og:description" content="<?php echo $meta_description?>" /> -->
 
     <!-- for Twitter -->
-    <meta name="twitter:card" content="summary" />
+   <!--  <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="" />
     <meta name="twitter:description" content="" />
     <meta name="twitter:image" content="" />
     <meta name="twitter:title" content="<?php echo $meta_title?>" />
     <meta name="twitter:description" content="<?php echo $meta_description?>" />
-    <meta name="twitter:image" content="<?php echo $meta_image?>" />
+    <meta name="twitter:image" content="<?php echo $meta_image?>" /> -->
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="<?php echo base_url() ?>assets/theme/img/sentul/fav.png" type="image/x-icon" />
