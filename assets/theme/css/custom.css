@@ -472,6 +472,9 @@ a, a:hover, a:focus {
 	position: relative;
 	left: -30px;
 }
+.child-navigation li a{
+	color: #fbc53f;
+}
 .border-navi{
     border-left: 4px solid #fbc53f;
     margin-right: 5px; 

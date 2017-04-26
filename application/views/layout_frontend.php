@@ -90,23 +90,23 @@
                                 <img src="<?php echo base_url() ?>assets/theme/img/sentul/arrow-menu.png" width="25">
                                 <div class="col-md-12 menu-content text-left">
                                     <ul class="menu-navigation">
-                                        <li><span class="border-navi"></span> Dijual
+                                        <li><span class="border-navi"></span><a href="">Dijual</a>
                                         <ul class="child-navigation">
-                                            <li>Rumah</li>
-                                            <li>Apartement</li>
-                                            <li>Ruko</li>
+                                            <li><a href="">Rumah</a></li>
+                                            <li><a href="">Apartement</a></li>
+                                            <li><a href="">Ruko</a></li>
                                         </ul>
                                         </li>
-                                        <li><span class="border-navi"></span> Disewa 
+                                        <li><span class="border-navi"></span> <a href="">Disewa </a>
                                         <ul class="child-navigation">
-                                            <li>Rumah</li>
-                                            <li>Apartement</li>
-                                            <li>Ruko</li>
+                                            <li><a href="">Rumah</a></li>
+                                            <li><a href="">Apartement</a></li>
+                                            <li><a href="">Ruko</a></li>
                                         </ul></li>
-                                        <li><span class="border-navi"></span> Fasilitas</li>
-                                        <li><span class="border-navi"></span> Price List</li>
-                                        <li><span class="border-navi"></span> Berita</li>
-                                        <li><span class="border-navi"></span> Kontak Kami</li>
+                                        <li><span class="border-navi"></span> <a href="">Fasilitas</a></li>
+                                        <li><span class="border-navi"></span> <a href="">Price List</a></li>
+                                        <li><span class="border-navi"></span> <a href="">Berita</a></li>
+                                        <li><span class="border-navi"></span> <a href="">Kontak Kami</a></li>
                                     </ul>
                                 </div>
                                 </div>
