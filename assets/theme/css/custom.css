@@ -423,4 +423,56 @@ a, a:hover, a:focus {
 		float: right;
 	}
 }
+.menu-top{
 
+}
+.menu-top img{
+	cursor: pointer;
+}
+.menu-box{
+	 float: right; 
+	 position: absolute; 
+	 right: 20px; 
+	 top: 80px;
+	 display: none;
+}
+.menu-content{
+	height: auto; 
+	background: #fff;
+	position: relative; 
+	top: -3px; 
+	right: -40px;
+	padding: 10px;
+	padding-bottom: 30px;
+	padding-top: 20px;
+}
+.menu-navigation li{
+	list-style: none;
+	width: 50%;
+	float: left;
+	margin-top: 15px;
+	padding-left: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #4f4f4f;
+}
+.child-navigation{
+	margin-top: 10px;
+}
+.child-navigation li{
+	list-style: none;
+	width: 100%;
+	float: none;
+	border-left: 0px;
+	margin-top: 0px;
+	padding-left: 5px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #fbc53f;
+	position: relative;
+	left: -30px;
+}
+.border-navi{
+    border-left: 4px solid #fbc53f;
+    margin-right: 5px; 
+}

@@ -84,44 +84,31 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="header-column">
-                                <div class="header-row">
-                                    <div class="header-nav">
-                                        <button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main">
-                                            <i class="fa fa-bars"></i>
-                                        </button>
-                                        <div class="header-nav-main header-nav-main-effect-1 header-nav-main-sub-effect-1 collapse">
-                                            <nav>
-                                                <ul class="nav nav-pills" id="mainNav">
-                                                    <li class="activedropdown-full-color dropdown-secondary">
-                                                        <a href="demo-restaurant.html">
-                                                            Home
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-full-color dropdown-secondary">
-                                                        <a href="demo-restaurant-menu.html">
-                                                            Menu
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-full-color dropdown-secondary">
-                                                        <a href="demo-restaurant-about.html">
-                                                            About
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-full-color dropdown-secondary">
-                                                        <a href="demo-restaurant-press.html">
-                                                            Press
-                                                        </a>
-                                                    </li>
-                                                    <li class="dropdown-full-color dropdown-secondary">
-                                                        <a href="demo-restaurant-contact.html">
-                                                            Contact
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
+                            <div class="header-column text-right menu-top">
+                                <img id="btn-menu" alt="Menu" src="<?php echo base_url() ?>assets/theme/img/sentul/menu.png">
+                                <div id="menu-box" class="col-md-4 menu-box">
+                                <img src="<?php echo base_url() ?>assets/theme/img/sentul/arrow-menu.png" width="25">
+                                <div class="col-md-12 menu-content text-left">
+                                    <ul class="menu-navigation">
+                                        <li><span class="border-navi"></span> Dijual
+                                        <ul class="child-navigation">
+                                            <li>Rumah</li>
+                                            <li>Apartement</li>
+                                            <li>Ruko</li>
+                                        </ul>
+                                        </li>
+                                        <li><span class="border-navi"></span> Disewa 
+                                        <ul class="child-navigation">
+                                            <li>Rumah</li>
+                                            <li>Apartement</li>
+                                            <li>Ruko</li>
+                                        </ul></li>
+                                        <li><span class="border-navi"></span> Fasilitas</li>
+                                        <li><span class="border-navi"></span> Price List</li>
+                                        <li><span class="border-navi"></span> Berita</li>
+                                        <li><span class="border-navi"></span> Kontak Kami</li>
+                                    </ul>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -241,10 +228,7 @@
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script>
-            $( function() {
-                $( "#tabs" ).tabs();
-            } );
-        </script>
+
+        <script src="<?php echo base_url() ?>assets/theme/js/custom.js"></script>
 </body>
 </html>

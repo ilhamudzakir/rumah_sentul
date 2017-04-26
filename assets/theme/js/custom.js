@@ -1,3 +1,13 @@
+
+
+$( document ).ready(function() {
+    
+     $('#btn-menu').click(function(){  
+        $('#menu-box').toggle('fast'); 
+    });
+     
+});
+
 var cbpHorizontalMenu = (function() {
 
 	var $listItems = $( '#cbp-hrmenu > ul > li' ),
@@ -42,6 +52,7 @@ var cbpHorizontalMenu = (function() {
 
 })();
 
-            $( function() {
+$( function() {
                 $( "#tabs" ).tabs();
             } );
+
