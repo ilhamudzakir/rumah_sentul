@@ -1,4 +1,4 @@
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
   <?php $no=0; foreach ($banner as $key) { ?>
@@ -62,7 +62,7 @@
                         <div class="row">
                             
                             <form>
-                                <div class="col-md-8">
+                                <div class="col-md-12-offset-2">
                                     <div class="col-md-10 search">
                                         <input type="text" value="" class="form-control cari" placeholder="Cari properti idaman anda" name="search" id="search">
                                     </div>
@@ -73,15 +73,7 @@
                                     </div>  
                                 
                                 </div>
-                                <div class="col-md-4 right">
-                                    <ul class="social-icons mb-md">
-                                        <li class="social-icons-instagram"><a href="http://www.instagram.com/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                                        <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                                        <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                                        <li class="social-icons-googleplus"><a href="http://www.google.com/" target="_blank" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
-                                        <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
+                              
                                 
                             </form>
                         
@@ -447,10 +439,10 @@
                         <div class="row mb-xlg">
                             <div class="col-md-12 center">
                                 <h4 class="mt-none mb-none heading-dark">
-Special
-<strong>Offer</strong>
+Image
+<strong>Gallery</strong>
 </h4>
-<p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+
 <hr class="custom-divider m-none">
 </div>
                             </div>
@@ -466,9 +458,9 @@ Special
                                             <div class="masonry-item">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/demos/restaurant/gallery/restaurant-gallery-1.jpg" class="img-responsive" alt="">
+                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_3.jpg" class="img-responsive" alt="">
                                                         <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="img/demos/restaurant/gallery/restaurant-gallery-1.jpg">
+                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_3.jpg">
                                                                 <span class="thumb-info-icon-custom"></span>
                                                             </a>
                                                         </span>
@@ -478,9 +470,9 @@ Special
                                             <div class="masonry-item w2">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/demos/restaurant/gallery/restaurant-gallery-2.jpg" class="img-responsive" alt="">
+                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_2.jpg" class="img-responsive" alt="">
                                                         <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="img/demos/restaurant/gallery/restaurant-gallery-2.jpg">
+                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_2.jpg">
                                                                 <span class="thumb-info-icon-custom"></span>
                                                             </a>
                                                         </span>
@@ -490,9 +482,9 @@ Special
                                             <div class="masonry-item">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/demos/restaurant/gallery/restaurant-gallery-4.jpg" class="img-responsive" alt="">
+                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_4.jpg" class="img-responsive" alt="">
                                                         <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="img/demos/restaurant/gallery/restaurant-gallery-4.jpg">
+                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_4.jpg">
                                                                 <span class="thumb-info-icon-custom"></span>
                                                             </a>
                                                         </span>
@@ -502,9 +494,9 @@ Special
                                             <div class="masonry-item">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/demos/restaurant/gallery/restaurant-gallery-3.jpg" class="img-responsive" alt="">
+                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_5.jpg" class="img-responsive" alt="">
                                                         <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="img/demos/restaurant/gallery/restaurant-gallery-3.jpg">
+                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_5.jpg">
                                                                 <span class="thumb-info-icon-custom"></span>
                                                             </a>
                                                         </span>
@@ -514,9 +506,9 @@ Special
                                             <div class="masonry-item">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/demos/restaurant/gallery/restaurant-gallery-5.jpg" class="img-responsive" alt="">
+                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_1.jpg" class="img-responsive" alt="">
                                                         <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="img/demos/restaurant/gallery/restaurant-gallery-5.jpg">
+                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_1.jpg">
                                                                 <span class="thumb-info-icon-custom"></span>
                                                             </a>
                                                         </span>
@@ -540,7 +532,7 @@ Special
                                     <div class="col-half-section col-half-section-right">
                                         <div class="center">
                                             <h4 class="mt-none mb-none heading-dark">Berita<strong> Properti</strong></h4>
-                                            <p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                           
 
                                             <hr class="custom-divider m-none">
                                         </div>
@@ -640,23 +632,15 @@ Special
                                     <div class="col-half-section">
                                         <div class="center">
                                             <h4 class="mt-none mb-none heading-dark">Video <strong>Kami</strong></h4>
-                                            <p class="mb-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                         
 
                                             <hr class="custom-divider m-none">
                                         </div>
                                         <div class="row video-kami">
-                                        	<div class="col-md-6">
-                                        		<iframe width="100%" height="auto" src="https://www.youtube.com/embed/df7jza2Awt8" frameborder="0" allowfullscreen></iframe>
+                                        	<div class="col-md-12">
+                                        		<iframe width="100%" style="min-height:355px;" src="https://www.youtube.com/embed/B-DbKps8v0A" frameborder="0" allowfullscreen></iframe>
                                         	</div>
-                                        	<div class="col-md-6">
-                                        		<iframe width="100%" height="auto" src="https://www.youtube.com/embed/df7jza2Awt8" frameborder="0" allowfullscreen></iframe>
-                                        	</div>
-                                        	<div class="col-md-6">
-                                        		<iframe width="100%" height="auto" src="https://www.youtube.com/embed/df7jza2Awt8" frameborder="0" allowfullscreen></iframe>
-                                        	</div>
-                                        	<div class="col-md-6">
-                                        		<iframe width="100%" height="auto" src="https://www.youtube.com/embed/df7jza2Awt8" frameborder="0" allowfullscreen></iframe>
-                                        	</div>
+                                        	
 
                                         </div>
                                     </div>

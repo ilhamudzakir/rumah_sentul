@@ -145,7 +145,7 @@
 	margin-bottom: 40px;
 }
 a, a:hover, a:focus {
-    color: #fcc540;
+    color: #1b1b1a;
 }
 
 #header .header-nav-main nav > ul > li.open > a, #header .header-nav-main nav > ul > li:hover > a {
@@ -160,3 +160,267 @@ a, a:hover, a:focus {
     background-color: #fcc540;
     border-color: #fcc540 #fcc540 #fcc540;
 }
+
+.left-bar{
+	background:#ffffff;
+	margin-top:40px;
+}
+.breadcumb{
+	    padding-top: 23px !important;
+}
+.btl{
+	padding: 10px 0 0 0;
+}
+.itl{
+	padding: 20px 0 20px 0;
+	min-height: 224px;
+}
+.itl-listing{
+	padding: 20px 0 20px 0;
+	min-height: 224px;
+}
+.spb{
+	font-family: "Open sans", productsans;
+	color: #1b1b1a;
+    font-size: 20px;
+    
+}
+.litle_spb{
+	font-family: "Open sans", productsans;
+	color: #9f9d9d;
+    font-size: 15;
+   
+}
+
+.serp-sorting{
+	float: left;
+    list-style: none;
+	margin: 0 10px 0 10px;
+	
+}
+.a-sort{
+	color: #9f9d9d;
+}
+
+.a-sort:hover, .a-sort:focus {
+    color: #1b1b1a;
+	text-decoration:none;
+}
+
+.bb{
+	border-bottom: 1px solid #ececec;
+}
+.listing-title {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 5px;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.listing-type {
+    vertical-align: top;
+    margin-bottom: 5px;
+	font-size: 12px;
+}
+
+.listing-sell:before {
+    background-color: #d43134;
+}
+.listing-rent:before {
+    background-color: #1c80bb;
+}
+
+.listing-type:before {
+    width: 8px;
+    height: 8px;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+    margin-top: 7px;
+	font-size:10px
+}
+
+.listing-badges{
+	    
+    background: #ececec;
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.primer{
+	color:	#fcc540;
+}
+
+.second{
+	color:	#287dc7;
+}
+
+.right-info{
+	text-align:right;
+}
+.price-info{
+	
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.tag-price{
+	display: inline-block;
+    padding: 3px 3px;
+	background-color: #2980b9;
+    color: #ffffff;
+    font-size: 12px;
+	border-radius: 2px;
+}
+.list-right{
+	padding:0;
+}
+.row-info{
+	position	:relative;
+}
+.row-info.bottom{
+	margin-top:115px;
+	    margin-left: 15px;
+}
+
+.listing-room-info>div {
+    font-size: 10px;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 5px;
+    padding-right: 3px;
+}
+
+.listing-room-info>div>b {
+    font-size: 13px;
+    color: #1b1b1a;
+}
+.listing-size-info>div {
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.listing-size-info>div>b {
+    font-size: 13px;
+    color: #1b1b1a;
+    text-transform: lowercase;
+}
+.sup {
+    top: -0.5em;
+}
+.pd{
+	padding:0;
+}
+.agency-info {
+    font-weight: bold;
+	color:#2980b9;
+}
+.contact-agent-btn{
+	width:100%;
+}
+.btn .fa {
+    font-size: 18px;
+    top: 2px;
+    position: relative;
+    margin-right: 5px;
+}
+
+.pull-right{
+	float:right !important;
+}
+.btn-action {
+    color: #fff;
+    background-color: #ff7300;
+    
+}
+
+.row-button{
+	padding-bottom: 26px;
+    border-bottom: 1px solid #ececec;
+}
+.row-content{
+	padding-bottom: 20px;
+}
+
+.agency-info .agent-name {
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.agent-phone ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.agent-phone ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+.agent-email{
+	margin-top: 10px;
+}
+
+.serp-pagination {
+    margin: 40px 0;
+}
+.serp-result-info {
+    padding: 6px 12px;
+    text-align: center;
+    color: #999;
+}
+.serp-paging {
+    text-align: center;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+.pagination>li {
+    display: inline;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #2980b9;
+    background-color: #fff;
+    margin-left: -1px;
+}
+
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus {
+    color: #1b557a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    z-index: 2;
+    cursor: default;
+    color: #999;
+    border-bottom: 1px solid;
+}
+
+@media only screen and (min-width: 768px){
+	.contact-form button.btn.btn-action {
+		float: right;
+	}
+}
+
