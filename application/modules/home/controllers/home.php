@@ -49,13 +49,21 @@ class home extends DC_controller {
         	$key->image=$album->images;
         }
         
+
+
+        $galeryImage =select_all_limit($this->tbl_gallery,5)->result();
+
+       
+
         $data['unit_jual']=$unit_jual;
         $data['unit_sewa']=$unit_sewa;
         $data['unit_populer']=$unit_populer;
+        $data['galeryImager']=$galeryImage;
         $data['banner']=select_all($this->tbl_banner);
         $data['pagetabJual'] = $this->load->view('home/unitjual',$data,true);
         $data['pagetabsewa'] = $this->load->view('home/unitsewa',$data,true);
         $data['pagetabpopuler'] = $this->load->view('home/unitpopuler',$data,true);
+     	$data['pagegaleryImage'] = $this->load->view('home/galeryImage',$data,true);
      	$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

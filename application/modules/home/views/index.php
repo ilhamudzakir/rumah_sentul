@@ -131,66 +131,9 @@ Image
                                 <div class="lightbox" data-plugin-options='{"delegate": "a", "type": "image", "gallery": {"enabled": true}}'>
                                     <div class="masonry-loader masonry-loader-showing">
                                         <div class="masonry" data-plugin-masonry data-plugin-options='{"itemSelector": ".masonry-item"}'>
-                                            <div class="masonry-item">
-                                                <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
-                                                    <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_3.jpg" class="img-responsive" alt="">
-                                                        <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_3.jpg">
-                                                                <span class="thumb-info-icon-custom"></span>
-                                                            </a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div class="masonry-item w2">
-                                                <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
-                                                    <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_2.jpg" class="img-responsive" alt="">
-                                                        <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_2.jpg">
-                                                                <span class="thumb-info-icon-custom"></span>
-                                                            </a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div class="masonry-item">
-                                                <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
-                                                    <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_4.jpg" class="img-responsive" alt="">
-                                                        <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_4.jpg">
-                                                                <span class="thumb-info-icon-custom"></span>
-                                                            </a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div class="masonry-item">
-                                                <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
-                                                    <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_5.jpg" class="img-responsive" alt="">
-                                                        <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_5.jpg">
-                                                                <span class="thumb-info-icon-custom"></span>
-                                                            </a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
-                                            <div class="masonry-item">
-                                                <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
-                                                    <span class="thumb-info-wrapper">
-                                                        <img src="<?php echo base_url() ?>assets/theme/img/properti/sc_1.jpg" class="img-responsive" alt="">
-                                                        <span class="thumb-info-action thumb-info-action-custom">
-                                                            <a href="<?php echo base_url() ?>assets/theme/img/properti/sc_1.jpg">
-                                                                <span class="thumb-info-icon-custom"></span>
-                                                            </a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </div>
+                                        
+                                            <?php echo $pagegaleryImage?>
+                                    
                                         </div>
                                     </div>
                                 </div>
