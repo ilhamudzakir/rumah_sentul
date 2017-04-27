@@ -15,7 +15,7 @@
                       <div class="form-group">
                         <label class="form-label">Title</label>
                         <div class="controls">
-                          <input type="text" name="title" class="form-control" value="<?php if(isset($data)){ echo $data->title; } ?>">
+                          <input type="text" required name="title" class="form-control" value="<?php if(isset($data)){ echo $data->title; } ?>">
                         </div>
                       </div>
 
@@ -77,25 +77,56 @@
                       </div>
 
                       <div class="form-group">
+                        <label class="form-label">Jumlah Kamar Mandi</label>
+                        <div class="controls">
+                          <input type="text" required name="kamar_mandi" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_mandi; } ?>">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="form-label">Jumlah Kamar Tidur</label>
+                        <div class="controls">
+                          <input type="text" required name="kamar_tidur" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_tidur; } ?>">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="form-label">Jumlah Garasi</label>
+                        <div class="controls">
+                          <input type="text" required name="garasi" class="form-control" value="<?php if(isset($data)){ echo $data->garasi; } ?>">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="form-label">Luas Tanah</label>
+                        <div class="controls">
+                          <input type="text" required name="luas_tanah" class="form-control" value="<?php if(isset($data)){ echo $data->luas_tanah; } ?>">
+                        </div>
+                      </div>
+
+                       <div class="form-group">
+                        <label class="form-label">Luas Bangunan</label>
+                        <div class="controls">
+                          <input type="text" required name="luas_bangunan" class="form-control" value="<?php if(isset($data)){ echo $data->luas_bangunan; } ?>">
+                        </div>
+                      </div>
+
+
+                       <div class="form-group">
                         <label class="form-label">Price</label>
                         <div class="controls">
-                          <input type="text" name="price" class="form-control" value="<?php if(isset($data)){ echo $data->price; } ?>">
+                          <input type="text" name="price" required class="form-control" value="<?php if(isset($data)){ echo $data->price; } ?>">
                         </div>
                       </div>
 
                       <div class="form-group">
                         <label class="form-label">Description</label>
                         <div class="controls">
-                           <textarea id="summernote" name="description" placeholder="Enter text ..." class="form-control" rows="10"><?php if(isset($data)){ echo $data->description; } ?></textarea>
+                           <textarea id="summernote" required name="description" placeholder="Enter text ..." class="form-control" rows="10"><?php if(isset($data)){ echo $data->description; } ?></textarea>
                         </div>
                       </div>
 
-                    <div class="form-group">
-                      <div class="checkbox check-info">
-                      <input id="checkbox4" value="1" name="price_offer" type="checkbox">
-                      <label for="checkbox4">Special Price Offer</label>
-                      </div>
-                    </div>
+                    
 
                         <div class="form-group">
                         <div class="controls">

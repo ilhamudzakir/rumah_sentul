@@ -85,7 +85,7 @@
                                 </div>
                             </div>
                             <div class="header-column text-right menu-top">
-                                <img id="btn-menu" title="Menu" src="<?php echo base_url() ?>assets/theme/img/sentul/menu.png">
+                                <img width="35" id="btn-menu" title="Menu" src="<?php echo base_url() ?>assets/theme/img/sentul/menu.png">
                                 <div id="menu-box" class="col-md-4 col-xs-12 col-sm-12 menu-box">
                                 <img id="arrow-menu" src="<?php echo base_url() ?>assets/theme/img/sentul/arrow-menu.png" width="25">
                                 <div class="col-md-12 col-sm-12 col-xs-12 menu-content text-left">

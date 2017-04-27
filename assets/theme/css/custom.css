@@ -487,6 +487,33 @@ a, a:hover, a:focus {
 #footer a:hover{
 	color: #fbc53f;
 }
+.right-bar{
+	margin-top: 40px;
+	background: #fff;
+	float: right;
+}
+.header-sidebar{
+	font-size: 15px;
+	color: #000;
+	padding-bottom: 5px;
+	border-bottom:5px solid #fbc53f;
+	padding-top: 30px;
+}
+.content-sidebar{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.field-content-sidebar{
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 2px solid #eee;
+}
+.content-sidebar .row{
+	margin-bottom: 10px;
+}
+.page-fb{
+	margin-top: 20px;
+}
 @media only screen and (min-width: 768px){
 	.contact-form button.btn.btn-action {
 		float: right;

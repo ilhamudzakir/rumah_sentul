@@ -25,12 +25,17 @@ class home extends DC_controller {
           $data['meta_keywords'] ='rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi';
           $data['meta_site_name'] ='RumahSentul.com';
           $data['meta_image']='RumahSentul.com';
-         
+        
+        $unit_jual=select_where_limit_order($this->tbl_unit,'id_transaction','2','9','id','DESC')->result();
+        foreach ($unit_jual as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+        $data['unit_jual']=$unit_jual;
         $data['banner']=select_all($this->tbl_banner);
-        $data['list']= select_all($this->tbl_unit);
 		$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 	
 }
-

@@ -333,6 +333,7 @@
 								</div>
 								
 							</div>
+							<?php echo $this->load->view('sidebar_front') ?>
 						</div>
 						
 					</div>
