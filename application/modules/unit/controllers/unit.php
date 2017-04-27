@@ -38,26 +38,5 @@ class unit extends DC_controller {
 		$this->load->view('layout_frontend',$data);
 	}
 
-	function category(){
-		$data = $this->controller_attr;
-		$data['function']='unit';
-
-		 /*custome */
-		 
-
-		$data['page'] = $this->load->view('unit/category',$data,true);
-		$this->load->view('layout_frontend',$data);
-	}
-
-	function brand(){
-		$data = $this->controller_attr;
-		$data['function']='unit';
-
-		 /*custome */
-		 
-
-		$data['page'] = $this->load->view('unit/brand',$data,true);
-		$this->load->view('layout_frontend',$data);
-	}
 }
 

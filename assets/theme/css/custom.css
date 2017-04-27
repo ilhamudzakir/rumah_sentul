@@ -480,6 +480,13 @@ a, a:hover, a:focus {
     background: #fff;
     color: #fcc540;
 }
+.cover-category{
+	background-position: 50% 100%; 
+	min-height: 400px;
+}
+#footer a:hover{
+	color: #fbc53f;
+}
 @media only screen and (min-width: 768px){
 	.contact-form button.btn.btn-action {
 		float: right;

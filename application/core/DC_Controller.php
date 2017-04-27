@@ -31,6 +31,8 @@ class DC_Controller extends CI_Controller {
         $this->tbl_cicilan_unit= $this->tbl_prefix .'cicilan_unit';
         $this->tbl_album_unit= $this->tbl_prefix .'album_unit';
         $this->tbl_event= $this->tbl_prefix .'event';
+        $this->tbl_video= $this->tbl_prefix .'video';
+        $this->tbl_gallery= $this->tbl_prefix .'gallery';
         
 
         //load model fo all page

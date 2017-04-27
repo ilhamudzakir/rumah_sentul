@@ -60,8 +60,8 @@ $static_page='dc_static_content';
 $query = $db->query("SELECT * from ".$static_page);
 $result = $query->result();
 foreach( $result as $key )
-{
-	$route[ ''.str_replace(' ','-',$key->title)] = 'static_page/main/'.$key->id;
+{	$title=strtolower($key->title);
+	$route[ ''.str_replace(' ','-',$title)] = 'static_page/main/'.$key->id;
 	
 	
 }

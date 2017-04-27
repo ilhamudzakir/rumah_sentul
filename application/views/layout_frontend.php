@@ -79,7 +79,7 @@
                         <div class="header-row">
                             <div class="header-column">
                                 <div class="header-logo">
-                                    <a href="index-2.html">
+                                    <a href="<?php echo base_url(); ?>">
                                         <img alt="Porto" width="80px" src="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>">
                                     </a>
                                 </div>
@@ -90,23 +90,23 @@
                                 <img id="arrow-menu" src="<?php echo base_url() ?>assets/theme/img/sentul/arrow-menu.png" width="25">
                                 <div class="col-md-12 col-sm-12 col-xs-12 menu-content text-left">
                                     <ul class="menu-navigation">
-                                        <li><span class="border-navi"></span><a href="">Dijual</a>
+                                        <li><span class="border-navi"></span><a href="<?php echo base_url() ?>category">Dijual</a>
                                         <ul class="child-navigation">
-                                            <li><a href="">Rumah</a></li>
-                                            <li><a href="">Apartement</a></li>
-                                            <li><a href="">Ruko</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Rumah</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Apartement</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Ruko</a></li>
                                         </ul>
                                         </li>
-                                        <li><span class="border-navi"></span> <a href="">Disewa </a>
+                                        <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>category">Disewa </a>
                                         <ul class="child-navigation">
-                                            <li><a href="">Rumah</a></li>
-                                            <li><a href="">Apartement</a></li>
-                                            <li><a href="">Ruko</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Rumah</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Apartement</a></li>
+                                            <li><a href="<?php echo base_url() ?>category">Ruko</a></li>
                                         </ul></li>
-                                        <li><span class="border-navi"></span> <a href="">Fasilitas</a></li>
-                                        <li><span class="border-navi"></span> <a href="">Price List</a></li>
-                                        <li><span class="border-navi"></span> <a href="">Berita</a></li>
-                                        <li><span class="border-navi"></span> <a href="">Kontak Kami</a></li>
+                                        <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>fasilitas">Fasilitas</a></li>
+                                        <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>price-list">Price List</a></li>
+                                        <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>news">Berita</a></li>
+                                        <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>contact">Kontak Kami</a></li>
                                     </ul>
                                 </div>
                                 </div>
@@ -150,13 +150,13 @@
                         <b><h4 class="mb-none mt-xs heading-dark">Labels</h4></b>
                         </div>
                         <ul class="list-footer">
-                            <li>Design Interior</li>
-                            <li>Event</li>
-                            <li>News</li>
-                            <li>Promo</li>
-                            <li>Tips</li>
-                            <li>Wisata</li>
-                            <li>Download Price List</li>
+                            <li><a href="<?php echo base_url() ?>design-interior">Design Interior</a></li>
+                            <li><a href="<?php echo base_url() ?>event">Event</a></li>
+                            <li><a href="<?php echo base_url() ?>news">News</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Promo</a></li>
+                            <li><a href="<?php echo base_url() ?>tips">Tips</a></li>
+                            <li><a href="<?php echo base_url() ?>event">Wisata</a></li>
+                            <li><a href="<?php echo base_url() ?>price-list">Download Price List</a></li>
                         </ul>
 
                         </div>
@@ -166,10 +166,10 @@
                         <b><h4 class="mb-none mt-xs heading-dark">Property Dijual</h4></b>
                         </div>
                          <ul class="list-footer">
-                            <li>Rumah Dijual</li>
-                            <li>Apartement Dijual</li>
-                            <li>Ruko Dijual</li>
-                            <li>Cluster Dijual</li>
+                            <li><a href="<?php echo base_url() ?>category">Rumah Dijual</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Apartement Dijual</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Ruko Dijual</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Cluster Dijual</a></li>
                         </ul>
                         </div>
 
@@ -177,10 +177,10 @@
                         <div class="title-footer">
                         <b><h4 class="mb-none mt-xs heading-dark">Property Disewa</h4></b></div>
                         <ul class="list-footer">
-                            <li>Sewa Rumah</li>
-                            <li>Sewa Apartement</li>
-                            <li>Sewa Ruko</li>
-                            <li>Sewa Cluster</li>
+                            <li><a href="<?php echo base_url() ?>category">Sewa Rumah</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Sewa Apartement</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Sewa Ruko</a></li>
+                            <li><a href="<?php echo base_url() ?>category">Sewa Cluster</a></li>
                         </ul>
                         </div>
 
