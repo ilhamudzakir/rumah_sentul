@@ -79,7 +79,7 @@ $no++;
 									<a href=""><?php echo $data->title;?></a>
 								</h1>
 								<div class="listing-detail">
-									<div class="listing-type <?php if($data->transaction_id == 1){?> listing-rent  <?php }else{ ?>  listing-sell <?php }?>  listing-detail-info">Rumah <?php if($data->transaction_id == 1){?> disewa  <?php }else{ ?>  dijual <?php }?></div>
+									<div class="listing-type-detail <?php if($data->transaction_id == 1){?> listing-rent  <?php }else{ ?>  listing-sell <?php }?>  listing-detail-info">Rumah <?php if($data->transaction_id == 1){?> disewa  <?php }else{ ?>  dijual <?php }?></div>
 									
 								</div>
 								
@@ -88,19 +88,29 @@ $no++;
 						<div class="col-sm-4 list-right">
 							<div class="right-info">
 								<div class="price-info"><?php echo idr($data->price);?> </div>
-								<div class="tag-price">
-									<?php if($data->condition_id == 1){?> KPR > CASH  <?php }else{ ?>  KPR?KPA > BERTAHAP/CASH <?php }?>
+								<div class="col-sm-8 right pd">
+									<div class="tag-price stat">
+										<?php if($data->condition_id == 1){?> KPR > CASH  <?php }else{ ?>  KPR?KPA > BERTAHAP/CASH <?php }?>
+									</div>
+									
 								</div>
-								<?php if($data->dp_disc){?> 
-								<div class="tag-price">
-									DP : <?php echo $data->dp_disc;?> jtan
+								<div class="col-sm-8 right pd">
+									<?php if($data->dp_disc){?> 
+									<div class="tag-price stat">
+										DP : <?php echo $data->dp_disc;?> jtan
+									</div>
+									<?php } ?>
+									
 								</div>
-								<?php } ?>
-								<?php if($data->cicilan_disc){?> 
-								<div class="tag-price">
-									Cicilan : <?php echo $data->cicilan_disc;?> jtan
+								<div class="col-sm-8 right pd">
+									<?php if($data->cicilan_disc){?> 
+									<div class="tag-price stat">
+										Cicilan : <?php echo $data->cicilan_disc;?> jtan
+									</div>
+									<?php } ?>
+									
 								</div>
-								<?php } ?>
+								
 							</div>
 						</div>
 					</div>
