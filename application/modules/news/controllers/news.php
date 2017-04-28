@@ -37,6 +37,13 @@ class news extends DC_controller {
 		
 		$data['data'] = select_where($this->tbl_news,'id',$id)->row();
         
+        $unit_jual=select_all_limit_random($this->tbl_unit,5);
+        foreach ($unit_jual as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+        $data['unit_jual']=$unit_jual;
 		$data['page'] = $this->load->view('news/detail',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

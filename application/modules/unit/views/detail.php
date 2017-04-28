@@ -27,10 +27,15 @@
 			<div id="carousel-box" class="carousel slide" data-ride="carousel">
 			  <!-- Indicators -->
 			  <ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
+				
+<?php 
+					 $no= 0;	
+					 foreach ($album as $key) { 
+
+					 	?>
+				<li data-target="#myCarousel" data-slide-to="<?php echo $no?>" class="<?php if( $no==0){?>active <?php } ?>"></li>
+			  
+<?php $no++; } ?>
 			  </ol>
 
 			  <!-- Wrapper for slides -->
