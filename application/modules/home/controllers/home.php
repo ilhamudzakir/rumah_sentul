@@ -50,16 +50,21 @@ class home extends DC_controller {
         }
         
 
-        $galeryImage =select_all_limit_random($this->tbl_gallery,5);       
+        $galeryImage =select_all_limit_random($this->tbl_gallery,5);    
+
+        $newsslide=select_all_limit_order($this->tbl_news,4,'date_created','DESC')->result();
 
         $data['unit_jual']=$unit_jual;
         $data['unit_sewa']=$unit_sewa;
         $data['unit_populer']=$unit_populer;
         $data['galeryImager']=$galeryImage;
+        $data['newsslide']=$newsslide;
         $data['banner']=select_all($this->tbl_banner);
+
         $data['pagetabJual'] = $this->load->view('home/unitjual',$data,true);
         $data['pagetabsewa'] = $this->load->view('home/unitsewa',$data,true);
         $data['pagetabpopuler'] = $this->load->view('home/unitpopuler',$data,true);
+        $data['pagenews'] = $this->load->view('home/newsslide',$data,true);
      	$data['pagegaleryImage'] = $this->load->view('home/galeryImage',$data,true);
      	$data['page'] = $this->load->view('home/index',$data,true);
 		$this->load->view('layout_frontend',$data);
