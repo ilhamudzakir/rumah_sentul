@@ -62,7 +62,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="form-label">Transaction</label>
+                        <label class="form-label">Status</label>
                         <div class="controls">
                           <select class="select2 form-control" name="id_transaction" required>
                             <option value="">--select transaction--</option>
