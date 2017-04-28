@@ -21,17 +21,22 @@ class news extends DC_controller {
 		$data['function']='news';
 		
 		//custom
-         
+         		 $data['meta_title']='rumah rumah sentul';
+		     $data['meta_description'] = 'Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com';
+          $data['meta_keywords'] ='rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi';
+          $data['meta_site_name'] ='RumahSentul.com';
+          $data['meta_image']='RumahSentul.com';
+        
 		$data['page'] = $this->load->view('news/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 	
-	function detail(){
+	function detail($id){
 		$data = $this->controller_attr;
 		$data['function']='detail';
 		
-		//custom
-         
+		$data['data'] = select_where($this->tbl_news,'id',$id)->row();
+        
 		$data['page'] = $this->load->view('news/detail',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}

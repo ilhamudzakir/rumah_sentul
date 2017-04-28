@@ -6,44 +6,57 @@
     <title><?php echo $controller_name ?> | <?php echo  $this->appearance->name ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name='robots' content='noindex, nofollow' />
-    <meta content="" name="title" />
-    <meta content="" name="author" />
-   <!--  <meta content="<?php echo $meta_title?>" name="title" />
-    <meta content="<?php echo $meta_site_name?>" name="author" />
-    <meta name="language" content="indonesia"> -->
+    <meta name="language" content="indonesia"> 
 
     <!-- for Google -->
-  <!--   <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="description" content="<?php echo $meta_description?>" />
-    <meta name="keywords" content="<?php echo $meta_keywords?>" /> -->
 
-  <!--   <meta name="author" content="" />
-    <meta name="copyright" content="" />
-    <meta name="application-name" content="" />
-    <meta name="author" content="<?php echo $meta_site_name?>" />
-    <meta name="copyright" content="<?php echo $meta_site_name?>" />
-    <meta name="application-name" content="<?php echo $meta_site_name?>" /> -->
+  <?php if($this->uri->segment('2')=='detail'){ ?>
+    <meta name="description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
+    <meta name="keywords" content="rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi" /> 
+
+
+    <meta name="author" content="<?php echo base_url() ?>" />
+    <meta name="copyright" content="<?php echo base_url() ?>" />
+    <meta name="application-name" content="<?php echo base_url() ?>" /> 
 
     <!-- for Facebook -->
-    <!-- <meta property="og:title" content="" />
-    <meta property="og:title" content="<?php echo $meta_title?>" />
+    <meta property="og:title" content="<?php echo $data->title ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="<?php echo $meta_image?>" />
-    <meta property="og:url" content="<?php echo $meta_site_name?>" />
-    <meta property="og:description" content="<?php echo $meta_description?>" /> -->
+    <meta property="og:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php  echo base_url() ?> assets/uploads/news/ <?php echo $data->id?>/<?php echo $data->images ?>  <?php }else{ ?> <?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?> <?php }?>" />
+    <meta property="og:url" content="<?php if($this->uri->segment('1')=='news'){ echo base_url()."news/detail/".$data->id."/".url_title($data->title); }else{ echo base_url()."unit/detail/".$data->id."/".url_title($data->title);} ?>" />
+    <meta property="og:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" /> 
 
     <!-- for Twitter -->
-   <!--  <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:title" content="<?php echo $meta_title?>" />
-    <meta name="twitter:description" content="<?php echo $meta_description?>" />
-    <meta name="twitter:image" content="<?php echo $meta_image?>" /> -->
+     <meta name="twitter:card" content="summary" />
+
+    <meta name="twitter:title" content="<?php echo $data->title?>" />
+    <meta name="twitter:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
+    <meta name="twitter:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php  echo base_url() ?> assets/uploads/news/ <?php echo $data->id?>/<?php echo $data->images ?>  <?php }else{ ?> <?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?> <?php }?>" /> 
+
+<?php }else{?>
+
+
+    <meta name="description" content="Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com" />
+    <meta name="keywords" content="rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi" /> 
+   
+    <meta name="author" content="<?php echo base_url() ?>" />
+    <meta name="copyright" content="<?php echo base_url() ?>" />
+    <meta name="application-name" content="<?php echo base_url() ?>" /> 
+
+    <!-- for Facebook -->
+
+    <meta property="og:title" content="rumah rumah sentul" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" />
+    <meta property="og:url" content="<?php echo base_url() ?>" />
+    <meta property="og:description" content="Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com" /> 
+
+    <!-- for Twitter -->
+     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="rumah rumah sentul" />
+    <meta name="twitter:description" content="Cari beli dan jual properti secara online mudah aman sekaligus cepat, hanya di RumahSentul.com" />
+    <meta name="twitter:image" content="<?php echo base_url() ?>assets/uploads/settings/<?php echo $this->appearance->logo ?>" /> 
+<?php }?>
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="<?php echo base_url() ?>assets/theme/img/sentul/fav.png" type="image/x-icon" />
