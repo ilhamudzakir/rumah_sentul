@@ -21,7 +21,7 @@ $no++;
                                                     <span class="thumb-info-caption">
                                                         <span class="thumb-info-caption-text">
                                                             <h4 class="mb-none mt-xs heading-dark"><?php echo $key->title ?></h4>
-                                                            <p class="font-size-md"><?php echo substr($key->content, 0,100)."..."; ?></p>
+                                                            <p class="font-size-md"><?php echo substr(strip_tags($key->content), 0,100)."..."; ?></p>
                                                             <a class="mt-md" href="<?php echo base_url()."news/detail/".$key->id."/".url_title($key->title) ?>">Read More <i class="fa fa-long-arrow-right"></i></a>
                                                         </span>
                                                     </span>
