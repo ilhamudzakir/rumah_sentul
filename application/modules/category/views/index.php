@@ -161,25 +161,7 @@
 												<div class="col-sm-12">
 													
 													<div class="serp-paging">
-														<ul id="serp-pagination-link" class="pagination">
-															<li style="display:none"><span>1 <span class="sr-only">(current)</span>sebelumnya</span>
-															</li>
-															<li class="active"><span>1 <span class="sr-only">(current)</span></span>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-2" class="ajax">2</a>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-3" class="ajax">3</a>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-4" class="ajax">4</a>
-															</li>
-															
-															<li>
-																<a class="ajax" href="/rumah-dijual/page-2">Selanjutnya</a>
-															</li>
-														</ul>
+														<?php echo $paging_jual ?>
 													</div>
 												</div>
 											</div>
@@ -305,26 +287,8 @@
 												</div>
 												
 												<div class="col-sm-12">
-													<div class="serp-paging">				
-														<ul id="serp-pagination-link" class="pagination">
-															<li style="display:none"><span>1 <span class="sr-only">(current)</span>sebelumnya</span>
-															</li>
-															<li class="active"><span>1 <span class="sr-only">(current)</span></span>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-2" class="ajax">2</a>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-3" class="ajax">3</a>
-															</li>
-															<li>
-																<a  href="/rumah-dijual/page-4" class="ajax">4</a>
-															</li>
-															
-															<li>
-																<a class="ajax" href="/rumah-dijual/page-2">Selanjutnya</a>
-															</li>
-														</ul>
+													<div class="serp-paging">
+														<?php echo $paging_sewa ?>
 													</div>
 												</div>
 											</div>

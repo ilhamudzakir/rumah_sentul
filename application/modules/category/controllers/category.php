@@ -20,7 +20,9 @@ class category extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='category';
         //custom
-
+		$data['paging_jual']=$this->pagination_param(base_url()."category/page/",'jual',10,100);
+		$data['paging_sewa']=$this->pagination_param(base_url()."category/page/",'second',10,100);
+		$data['paging_populer']=$this->pagination_param(base_url()."category/page/",'populer',10,100);
         $data['page'] = $this->load->view('category/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
