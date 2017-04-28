@@ -11,7 +11,8 @@ $no++;
                          <?php  if($no ==1){?>           
                                             <div>
                                                 <?php }?> 
-
+<span class="thumb-info thumb-info-side-image thumb-info-no-zoom thumb-info-no-borders thumb-info-blog-custom mb-xl">
+                                                
                                           <span class="thumb-info-side-image-wrapper p-none">
                                                          <img src="<?php echo base_url() ?>assets/uploads/news/<?php echo $key->id?>/<?php echo $key->images ?>" class="img-responsive" alt="" style="width: 165px;">
                                                    
