@@ -3,7 +3,7 @@
 
 <head>
 
-    <title><?php echo $controller_name ?> | <?php echo  $this->appearance->name ?></title>
+    <title><?php if($this->uri->segment('2')=='detail'){  echo $data->title; }else{ echo $controller_name;}?> | <?php echo  $this->appearance->name ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name='robots' content='noindex, nofollow' />
     <meta name="language" content="indonesia"> 

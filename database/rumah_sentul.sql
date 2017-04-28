@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2017 at 05:41 PM
+-- Generation Time: Apr 28, 2017 at 09:20 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -35,14 +35,16 @@ CREATE TABLE IF NOT EXISTS `dc_album_unit` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_album_unit`
 --
 
 INSERT INTO `dc_album_unit` (`id`, `title`, `images`, `id_unit`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(3, 'image satu', 'ruko.jpg', 1, '2017-04-27 15:37:18', NULL, 1, NULL);
+(3, 'image satu', 'ruko.jpg', 1, '2017-04-27 15:37:18', NULL, 1, NULL),
+(4, 'kjnkkjkkj', 'sc_2.jpg', 1, '2017-04-29 00:56:51', NULL, 1, NULL),
+(5, '888', 'sc_5.jpg', 1, '2017-04-29 00:57:05', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -179,14 +181,15 @@ CREATE TABLE IF NOT EXISTS `dc_condition` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_condition`
 --
 
 INSERT INTO `dc_condition` (`id`, `title`, `description`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(1, 'Second', '<p>dasdsa<br></p>', '2017-04-22 20:55:54', NULL, 1, NULL);
+(1, 'Second', '<p>dasdsa<br></p>', '2017-04-22 20:55:54', NULL, 1, NULL),
+(2, 'primer', '<p>primer<br></p>', '2017-04-29 01:21:20', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -268,7 +271,18 @@ CREATE TABLE IF NOT EXISTS `dc_gallery` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_gallery`
+--
+
+INSERT INTO `dc_gallery` (`id`, `title`, `images`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, '', 'sc_1.jpg', '2017-04-28 22:47:54', NULL, 1, NULL),
+(2, 'asdad', 'sc_3.jpg', '2017-04-28 22:48:04', NULL, 1, NULL),
+(3, 'asdadad', 'sc_5.jpg', '2017-04-28 22:48:12', NULL, 1, NULL),
+(4, 'asdadasdad', 'test.jpg', '2017-04-28 22:48:19', NULL, 1, NULL),
+(5, 'asdadad', 'bg1.jpg', '2017-04-28 22:48:28', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -555,6 +569,9 @@ CREATE TABLE IF NOT EXISTS `dc_unit` (
   `id_brand` int(15) NOT NULL,
   `id_transaction` int(15) NOT NULL,
   `price_offer` int(1) DEFAULT NULL,
+  `price_disc` int(3) DEFAULT NULL,
+  `dp_disc` int(3) DEFAULT NULL,
+  `cicilan_disc` int(3) DEFAULT NULL,
   `description` text NOT NULL,
   `price` int(15) NOT NULL,
   `kamar_tidur` int(15) NOT NULL,
@@ -573,8 +590,8 @@ CREATE TABLE IF NOT EXISTS `dc_unit` (
 -- Dumping data for table `dc_unit`
 --
 
-INSERT INTO `dc_unit` (`id`, `title`, `id_category`, `id_condition`, `id_brand`, `id_transaction`, `price_offer`, `description`, `price`, `kamar_tidur`, `kamar_mandi`, `garasi`, `luas_tanah`, `luas_bangunan`, `quick_view`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(1, 'Sentul 1A', 1, 1, 1, 2, NULL, '<p>sdaasdda<p>', 1000000, 0, 0, 0, 0, 0, NULL, '0000-00-00 00:00:00', '2017-04-26 20:54:11', 0, 1);
+INSERT INTO `dc_unit` (`id`, `title`, `id_category`, `id_condition`, `id_brand`, `id_transaction`, `price_offer`, `price_disc`, `dp_disc`, `cicilan_disc`, `description`, `price`, `kamar_tidur`, `kamar_mandi`, `garasi`, `luas_tanah`, `luas_bangunan`, `quick_view`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'Sentul 1A', 1, 1, 1, 1, NULL, NULL, 600, 4, '<p>sdaasdda<p>', 1000000, 0, 0, 0, 0, 0, NULL, '2017-04-20 00:00:00', '2017-04-26 20:54:11', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -766,7 +783,7 @@ ALTER TABLE `dc_video`
 -- AUTO_INCREMENT for table `dc_album_unit`
 --
 ALTER TABLE `dc_album_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `dc_appearance`
 --
@@ -796,7 +813,7 @@ ALTER TABLE `dc_cicilan_unit`
 -- AUTO_INCREMENT for table `dc_condition`
 --
 ALTER TABLE `dc_condition`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `dc_contact`
 --
@@ -816,7 +833,7 @@ ALTER TABLE `dc_event`
 -- AUTO_INCREMENT for table `dc_gallery`
 --
 ALTER TABLE `dc_gallery`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `dc_groups`
 --

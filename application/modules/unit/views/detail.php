@@ -35,31 +35,24 @@
 
 			  <!-- Wrapper for slides -->
 				<div class="carousel-inner" id="previewOwlcarousel" role="listbox">
-					<div class="item active">
-					  <img src="<?php echo base_url() ?>assets/theme/img/properti/rumah.jpg" alt="Chania" class="img-responsive">
+				
+					 <?php 
+					 $no= 0;	
+					 foreach ($album as $key) { 
+$no++;
+					 	?>
+					<div class="item <?php if($no == 1){?>active <?php }?>">
+					  <img src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id ?>/<?php echo $key->images ?>" alt="<?php echo $key->title?>" class="img-responsive">
 					 
 					</div>
-
-					<div class="item">
-					  <img src="<?php echo base_url() ?>assets/theme/img/properti/test.jpg" alt="Chania" class="img-responsive">
-					 
-					</div>
-
-					<div class="item">
-					  <img src="<?php echo base_url() ?>assets/theme/img/properti/ruko.jpg" alt="Flower" class="img-responsive">
-					 
-					</div>
-
-					<div class="item">
-					  <img src="<?php echo base_url() ?>assets/theme/img/properti/rumah.jpg" alt="Flower" class="img-responsive">
-					 
-					</div>
+<?PHP }?>
+				
 				</div>
 				<div class="specs-highlight">
-					<span>LB: 90,00 m²</span>
-					<span>LT: 160,00 m²</span>
-					<span>KT: 5</span>
-					<span>KM: 2</span>
+					<span>LB: <?php echo $data->luas_bangunan;?> m<sup>2</sup></span>
+					<span>LT: <?php echo $data->luas_tanah; ?> m<sup>2</sup></span>
+					<span>KT: <?php echo $data->kamar_tidur ?></span>
+					<span>KM: <?php echo $data->kamar_mandi; ?></span>
 					
 				</div>
 
@@ -83,10 +76,10 @@
 						<div class="col-sm-8">
 							<div class="left-info">
 								<h1 class="listing-title-detail">
-									<a href="">Spring Mountain Residence Sentul City.</a>
+									<a href=""><?php echo $data->title;?></a>
 								</h1>
 								<div class="listing-detail">
-									<div class="listing-type listing-sell listing-detail-info">Rumah Dijual</div>
+									<div class="listing-type <?php if($data->transaction_id == 1){?> listing-rent  <?php }else{ ?>  listing-sell <?php }?>  listing-detail-info">Rumah <?php if($data->transaction_id == 1){?> disewa  <?php }else{ ?>  dijual <?php }?></div>
 									
 								</div>
 								
@@ -94,8 +87,20 @@
 						</div>
 						<div class="col-sm-4 list-right">
 							<div class="right-info">
-								<div class="price-info">Rp. 4.950.000.000 </div>
-								<div class="tag-price">Cicilan : 28.4 juta/bulan</div>
+								<div class="price-info"><?php echo idr($data->price);?> </div>
+								<div class="tag-price">
+									<?php if($data->condition_id == 1){?> KPR > CASH  <?php }else{ ?>  KPR?KPA > BERTAHAP/CASH <?php }?>
+								</div>
+								<?php if($data->dp_disc){?> 
+								<div class="tag-price">
+									DP : <?php echo $data->dp_disc;?> jtan
+								</div>
+								<?php } ?>
+								<?php if($data->cicilan_disc){?> 
+								<div class="tag-price">
+									Cicilan : <?php echo $data->cicilan_disc;?> jtan
+								</div>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
@@ -104,22 +109,24 @@
 			
 				<div class="listing-description">
 					<div id="original-desc">
-						Di Jual Rumah Baru Siap Huni Bulan Ini Harus Sold<br> Hanya 3 Menit dari Kamus UI<br> <br> Lokasi Rumah ini sangat nyaman ,aman dan asri,karena berada di area paling pavorit dan banyak di cari di kota depok . Lokasi dikenal dengan sebutan kukusan tepatnya sekitar jl.juragan sinda raya depok.<br> daerah ini cukup strategis dan mempunyai value yang tinggi untuk ukuran kota depok .bersebelahan dengan UI<br> akses tidak macet, dekat dengan tol beji sehingga memudahkan kemanapun utk beraktifitas .<br> <br> Disekitar lokasi rumah ini berdekatan dengan berbagai fasilitas publik ,seperti area comercial,dekat dengan stasiun kereta ,dengan Universitas Indonesia,Sekolah2, Rumah sakit dan masih banyak fasilitas publik lainnya yang akan memanjakan kebutuhan dan keperluan yang tinggal di rumah ini.<br>
+					<?php echo $data->description?>
 					</div>
 					
 				</div>
 				
 				<div class="listing-history-info">
-					<i class="fa fa-clock-o"></i>Iklan ini tayang sejak <strong>17 jam yang lalu</strong> dan sudah <strong>12</strong> kali dilihat    </div>
+					<i class="fa fa-clock-o"></i><?php echo get_date($data->date_created);?> </div>
 				<div class="listing-specs">
 					<h3>Detail</h3>
 					<div class="row">
 						<div class="col-sm-4">
 						  <ul>
-								<li>Luas Bangunan: 90,00 m²</li>
-								<li>Luas Tanah: 160,00 m²</li>
-								<li>Kamar Tidur: 5</li>
-								<li>Kamar Mandi: 2</li>
+					
+					
+								<li>Luas Bangunan: <?php echo $data->luas_bangunan;?> m<sup>2</sup></li>
+								<li>Luas Tanah: <?php echo $data->luas_tanah;?> m<sup>2</sup></li>
+								<li>Kamar Tidur: <?php echo $data->kamar_tidur;?></li>
+								<li>Kamar Mandi: <?php echo $data->kamar_mandi;?></li>
 								<li>Sertifikat: Lainnya</li>     
 							</ul>
 						</div>
@@ -155,165 +162,35 @@
 					
 					<div id="tabs-1">
 					<div class="row mt-lg">
+
+						 <?php foreach ($unit_jual as $key) { ?>
 						<div class="col-sm-4 pb-xlg">
 
 							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
 								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
 									<span class="thumb-info-side-image-wrapper p-none">
 									   <a href="#"> 
-											<img src="img/properti/test.jpg" class="img-responsive" alt="">
+											<img src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="<?php echo $key->title ?>">
 										</a>
 									</span>
 									<span class="thumb-info-caption">
 										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
+											<span class="title-caption"><a id="cap-blue" title="<?php echo $key->title ?>" href="<?php echo base_url()."unit/detail/".$key->id."/".url_title($key->title) ?>"><?php echo $key->title ?></a></span>
 										   
 										</div>
 										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
+												  	<span>LB: <?php echo $key->luas_bangunan;?> m<sup>2</sup></span>
+													<span>LT: <?php echo $key->luas_tanah;?> m<sup>2</sup></span>
+													<span>KT: <?php echo $key->kamar_tidur;?></span>
+													<span>KM: <?php echo $key->kamar_mandi;?></span>
 											
 										</div>
 									</span>
 								</span>
 							</div>
 
+							  <?php } ?>
 						</div>
-						<div class="col-sm-4 pb-xlg">
-
-							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
-									<span class="thumb-info-side-image-wrapper p-none">
-									   <a href="#"> 
-											<img src="img/properti/rumah.jpg" class="img-responsive" alt="">
-										</a>
-									</span>
-									<span class="thumb-info-caption">
-										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
-										   
-										</div>
-										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
-											
-										</div>
-									</span>
-								</span>
-							</div>
-
-						</div>
-						<div class="col-sm-4 pb-xlg">
-
-							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="600">
-								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
-									<span class="thumb-info-side-image-wrapper p-none">
-									   <a href="#"> 
-											<img src="img/properti/ruko.jpg" class="img-responsive" alt="">
-										</a>
-									</span>
-									<span class="thumb-info-caption">
-										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
-										   
-										</div>
-										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
-											
-										</div>
-									</span>
-								</span>
-							</div>
-
-						</div>
-						<div class="col-sm-4 pb-xlg">
-
-							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
-									<span class="thumb-info-side-image-wrapper p-none">
-									   <a href="#"> 
-											<img src="img/properti/ruko.jpg" class="img-responsive" alt="">
-										</a>
-									</span>
-									<span class="thumb-info-caption">
-										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
-										   
-										</div>
-										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
-											
-										</div>
-									</span>
-								</span>
-							</div>
-
-						</div>
-						<div class="col-sm-4 pb-xlg">
-
-							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
-									<span class="thumb-info-side-image-wrapper p-none">
-									   <a href="#"> 
-											<img src="img/properti/test.jpg" class="img-responsive" alt="">
-										</a>
-									</span>
-									<span class="thumb-info-caption">
-										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
-										   
-										</div>
-										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
-											
-										</div>
-									</span>
-								</span>
-							</div>
-
-						</div>
-						<div class="col-sm-4 pb-xlg">
-
-							<div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="600">
-								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
-									<span class="thumb-info-side-image-wrapper p-none">
-									   <a href="#"> 
-											<img src="img/properti/rumah.jpg" class="img-responsive" alt="">
-										</a>
-									</span>
-									<span class="thumb-info-caption">
-										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" href="">Spring Mountain Residence Sentul City</a></span>
-										   
-										</div>
-										<div class="specs-highlight-front">
-											<span>LB: 90,00 m²</span>
-											<span>LT: 160,00 m²</span>
-											<span>KT: 5</span>
-											<span>KM: 2</span>
-											
-										</div>
-									</span>
-								</span>
-							</div>
-
-						</div>
-						
-						
-						
 					</div>
 				</div>
 				 
