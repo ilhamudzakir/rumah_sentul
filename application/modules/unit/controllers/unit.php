@@ -32,8 +32,12 @@ class unit extends DC_controller {
 		$data['function']='unit';
 
 		 /*custome */
-		 
 
+		 $unit = select_where($this->tbl_unit,'id',$id)->row();
+		 $album=select_where($this->tbl_album_unit,'id_unit',$unit->id)->row();
+		 $unit->id_image=$album->id;
+         $unit->image=$album->images;
+		$data['data'] =   $unit;
 		$data['page'] = $this->load->view('unit/detail',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
