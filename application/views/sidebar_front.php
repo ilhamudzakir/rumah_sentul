@@ -13,12 +13,12 @@
 
 									<div class="row">
 										<div class="col-sm-6">
-										<a href="">
-											<img src="<?php echo base_url() ?>assets/uploads/news/<?php echo $key->id?>/<?php echo $key->images ?>" width="100%">
+											<a  href="">
+												<img src="<?php echo base_url() ?>assets/uploads/news/<?php echo $key->id?>/<?php echo $key->images ?>" width="100%">
 											</a>
 										</div>
 										<div class="col-sm-6">
-										<a href="">
+										<a class="wd" href="">
 										<?php echo $key->title ?>
 											</a>
 										</div>

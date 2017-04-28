@@ -23,6 +23,26 @@
     border-bottom-left-radius: 0 !important;
 	float:left;
 }
+
+.wd{
+	word-break: break-all;
+}
+.stat{
+	margin-top: 10px;
+	    width: 80% !important;
+    padding: 3px 21px !important;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+.banner-cat{
+	background-image: url("../img/sentul/bg2.jpg"); 
+	background-position: 50% 100%; 
+	min-height: 720px;
+}
 .text-title{
 	font-family: "Open sans", productsans;
 	font-size:16px;
@@ -239,6 +259,12 @@ a, a:hover, a:focus {
 	font-size: 12px;
 }
 
+.listing-type-detail{
+	vertical-align: top;
+    margin-bottom: 5px;
+	font-size: 18px;
+}
+
 .listing-sell:before {
     background-color: #d43134;
 }
@@ -255,6 +281,18 @@ a, a:hover, a:focus {
     float: left;
     margin-right: 5px;
     margin-top: 7px;
+	font-size:10px
+}
+
+.listing-type-detail:before {
+    width: 12px;
+    height: 12px;
+    content: "";
+    display: block;
+    border-radius: 50%;
+    float: left;
+    margin-right: 5px;
+    margin-top: 6px;
 	font-size:10px
 }
 

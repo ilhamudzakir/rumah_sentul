@@ -28,7 +28,7 @@
   </a>
 </div>
 
-                <section class="section-background section-center" style="background-image: url(<?php echo base_url() ?>assets/theme/img/sentul/bg2.jpg); background-position: 50% 100%; min-height: 720px; " data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                <section class="section-background section-center banner-cat" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3 left-text">

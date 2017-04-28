@@ -302,3 +302,97 @@
 						
 					</div>
 				</section>
+				
+				<!-- Modal -->
+			<div id="ContactModal" class="modal fade" role="dialog">
+			  <div class="modal-dialog ">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Kontak Kami</h4>
+				  </div>
+				  <div class="modal-body">
+					<div class="modal-wrapper">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="agen-info">
+									<div class="row">
+										<div class="col-xs-4"> 
+											<div class="agen-photo">
+													<img src="img/team/team-8.jpg" class="img-responsive" alt="">
+											</div>
+											<div class="agent-email">
+													<p>roni.sentulcity@gmail.com </p>
+											</div>
+										</div>
+										<div class="col-xs-8"> 
+											<div class="agency-info">
+													
+												<div class="agent-phone">
+													<ul>
+														<li id="li-phone">
+															<h3 class="agent-name">Roni Hartanana</h3>
+														</li>
+														<li id="li-phone">
+															<i class="fa fa-phone"></i> 
+															<a  href="tel:+62-812-8598-0130" class="phoneEnquiry">+62-877-7000-0076</a>              
+														
+														</li>
+														<li id="li-bb">
+															<i class="fa fa-phone"></i> 
+															<a  href="tel:+62-812-8598-0130" class="phoneEnquiry">+62-856-9567-0000</a>              
+																	
+														</li>
+														<li id="li-bb">
+															<i class="fa fa-phone"></i> 
+															<a  href="tel:+62-812-8598-0130" class="phoneEnquiry">+62-813-9809-0080</a>              
+																	
+														</li>
+													</ul>
+												</div>
+													
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="contact-form">
+									<form action="">
+										<div class="form-group">
+											<input type="text" class="form-control" id="as-name" name="name" placeholder="Nama Anda" xrequired="required" value="">
+										</div>
+										<div class="form-group">
+											<input type="email" class="form-control" id="as-name" name="email" placeholder="Email" xrequired="required" value="">
+										</div>
+										<div class="form-group">
+										  <input type="text" class="form-control phone-contact" id="as-phone" name="phone" placeholder="Telepon (Contoh: 6221998xxxx)" xrequired="required" value="">
+										</div>
+										<p style="font-size: 12px; color: #999; font-style: italic;">Saat anda menghubungi agen properti / pengembang, jangan lupa untuk menyebutkan bahwa anda melihat listing ini di rumahrumahsentulcity.com.</p>
+										<div class="checkbox">
+										  <label>
+											<input type="checkbox" id="as-subscribe" name="as-subscribe" checked="checked">
+											<p>Saya ingin menerima informasi dari rumahrumahsentulcity.com </p>
+										  </label>
+										  <label>
+											<input type="checkbox" id="as-term" name="as-term" checked="checked" required="true">
+											<p>Saya menyetujui <a href="/syarat-dan-ketentuan-id.html" target="_blank">Syarat dan Ketentuan</a> yang berlaku di rumahrumahsentulcity.com</p>
+										  </label>
+										</div>
+										<button type="submit" id="contact-agent-form-submit-btn" class="btn btn-action">Kirim Sekarang</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				  </div>
+				  <div class="modal-footer">
+					
+				  </div>
+				</div>
+
+			  </div>
+			</div>
