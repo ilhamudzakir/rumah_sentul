@@ -42,7 +42,7 @@ class home extends DC_controller {
 
 
 
-        $unit_populer=select_all($this->tbl_unit);
+        $unit_populer=select_all_limit_order($this->tbl_unit,9,'quick_view','DESC')->result();
         foreach ($unit_populer as $key) {
         	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
         	$key->id_image=$album->id;
@@ -50,10 +50,7 @@ class home extends DC_controller {
         }
         
 
-
-        $galeryImage =select_all_limit($this->tbl_gallery,5)->result();
-
-       
+        $galeryImage =select_all_limit_random($this->tbl_gallery,5);       
 
         $data['unit_jual']=$unit_jual;
         $data['unit_sewa']=$unit_sewa;
