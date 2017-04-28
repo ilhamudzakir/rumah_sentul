@@ -32,9 +32,58 @@ class home extends DC_controller {
         	$key->id_image=$album->id;
         	$key->image=$album->images;
         }
+
+        $unit_sewa=select_where_limit_order($this->tbl_unit,'id_transaction','1','9','id','DESC')->result();
+        foreach ($unit_sewa as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+
+
+
+        $unit_populer=select_all($this->tbl_unit);
+        foreach ($unit_populer as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+        
+
+
+        $galeryImage =select_all_limit($this->tbl_gallery,5)->result();
+
+       
+
         $data['unit_jual']=$unit_jual;
+        $data['unit_sewa']=$unit_sewa;
+        $data['unit_populer']=$unit_populer;
+        $data['galeryImager']=$galeryImage;
         $data['banner']=select_all($this->tbl_banner);
+        $data['pagetabJual'] = $this->load->view('home/unitjual',$data,true);
+        $data['pagetabsewa'] = $this->load->view('home/unitsewa',$data,true);
+        $data['pagetabpopuler'] = $this->load->view('home/unitpopuler',$data,true);
+     	$data['pagegaleryImage'] = $this->load->view('home/galeryImage',$data,true);
+     	$data['page'] = $this->load->view('home/index',$data,true);
+		$this->load->view('layout_frontend',$data);
+	}
+
+
+
+	function unitjual(){
+		$data = $this->controller_attr;
+		$data['function']='home';
+ 		$unit_jual=select_where_limit_order($this->tbl_unit,'id_transaction','2','9','id','DESC')->result();
+        foreach ($unit_jual as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+            $data['banner']=select_all($this->tbl_banner);
+        $data['unit_jual']=$unit_jual;
+			$data['pagetabJual'] = $this->load->view('home/unitjual',$data,true);
 		$data['page'] = $this->load->view('home/index',$data,true);
+	
 		$this->load->view('layout_frontend',$data);
 	}
 	
