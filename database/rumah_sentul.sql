@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.3.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2017 at 09:57 AM
--- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.23
+-- Generation Time: Apr 28, 2017 at 05:41 PM
+-- Server version: 5.6.24
+-- PHP Version: 5.6.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `rumah_sentul`
+-- Database: `core_decode`
 --
 
 -- --------------------------------------------------------
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `dc_album_unit`
 --
 
-CREATE TABLE `dc_album_unit` (
+CREATE TABLE IF NOT EXISTS `dc_album_unit` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `images` text NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `dc_album_unit` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_album_unit`
@@ -50,7 +50,7 @@ INSERT INTO `dc_album_unit` (`id`, `title`, `images`, `id_unit`, `date_created`,
 -- Table structure for table `dc_appearance`
 --
 
-CREATE TABLE `dc_appearance` (
+CREATE TABLE IF NOT EXISTS `dc_appearance` (
   `id` int(100) NOT NULL,
   `name` varchar(250) NOT NULL,
   `logo` text NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `dc_appearance` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_appearance`
@@ -73,7 +73,7 @@ INSERT INTO `dc_appearance` (`id`, `name`, `logo`, `date_created`, `date_modifie
 -- Table structure for table `dc_banner`
 --
 
-CREATE TABLE `dc_banner` (
+CREATE TABLE IF NOT EXISTS `dc_banner` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `description` text NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE `dc_banner` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_banner`
@@ -98,7 +98,7 @@ INSERT INTO `dc_banner` (`id`, `title`, `description`, `images`, `link`, `date_c
 -- Table structure for table `dc_brand`
 --
 
-CREATE TABLE `dc_brand` (
+CREATE TABLE IF NOT EXISTS `dc_brand` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `images` text NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE `dc_brand` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_brand`
@@ -122,7 +122,7 @@ INSERT INTO `dc_brand` (`id`, `title`, `images`, `description`, `date_created`, 
 -- Table structure for table `dc_category_unit`
 --
 
-CREATE TABLE `dc_category_unit` (
+CREATE TABLE IF NOT EXISTS `dc_category_unit` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `description` text NOT NULL,
@@ -131,7 +131,7 @@ CREATE TABLE `dc_category_unit` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_category_unit`
@@ -146,7 +146,7 @@ INSERT INTO `dc_category_unit` (`id`, `title`, `description`, `images`, `date_cr
 -- Table structure for table `dc_cicilan_unit`
 --
 
-CREATE TABLE `dc_cicilan_unit` (
+CREATE TABLE IF NOT EXISTS `dc_cicilan_unit` (
   `id` int(100) NOT NULL,
   `dp` int(50) NOT NULL,
   `lamanya` int(50) NOT NULL,
@@ -156,7 +156,7 @@ CREATE TABLE `dc_cicilan_unit` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_cicilan_unit`
@@ -171,7 +171,7 @@ INSERT INTO `dc_cicilan_unit` (`id`, `dp`, `lamanya`, `price`, `id_unit`, `date_
 -- Table structure for table `dc_condition`
 --
 
-CREATE TABLE `dc_condition` (
+CREATE TABLE IF NOT EXISTS `dc_condition` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `description` text NOT NULL,
@@ -179,7 +179,7 @@ CREATE TABLE `dc_condition` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_condition`
@@ -194,7 +194,7 @@ INSERT INTO `dc_condition` (`id`, `title`, `description`, `date_created`, `date_
 -- Table structure for table `dc_contact`
 --
 
-CREATE TABLE `dc_contact` (
+CREATE TABLE IF NOT EXISTS `dc_contact` (
   `id` int(100) NOT NULL,
   `name` varchar(250) NOT NULL,
   `email` varchar(250) NOT NULL,
@@ -204,7 +204,7 @@ CREATE TABLE `dc_contact` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_contact`
@@ -219,7 +219,7 @@ INSERT INTO `dc_contact` (`id`, `name`, `email`, `subject`, `content`, `date_cre
 -- Table structure for table `dc_default`
 --
 
-CREATE TABLE `dc_default` (
+CREATE TABLE IF NOT EXISTS `dc_default` (
   `id` int(100) NOT NULL,
   `name_group` varchar(250) NOT NULL,
   `date_created` datetime NOT NULL,
@@ -234,7 +234,7 @@ CREATE TABLE `dc_default` (
 -- Table structure for table `dc_event`
 --
 
-CREATE TABLE `dc_event` (
+CREATE TABLE IF NOT EXISTS `dc_event` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `images` text NOT NULL,
@@ -245,7 +245,7 @@ CREATE TABLE `dc_event` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_event`
@@ -260,7 +260,7 @@ INSERT INTO `dc_event` (`id`, `title`, `images`, `description`, `date_start`, `d
 -- Table structure for table `dc_gallery`
 --
 
-CREATE TABLE `dc_gallery` (
+CREATE TABLE IF NOT EXISTS `dc_gallery` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `images` text,
@@ -276,14 +276,14 @@ CREATE TABLE `dc_gallery` (
 -- Table structure for table `dc_groups`
 --
 
-CREATE TABLE `dc_groups` (
+CREATE TABLE IF NOT EXISTS `dc_groups` (
   `id` int(100) NOT NULL,
   `name_group` varchar(250) NOT NULL,
   `date_created` datetime NOT NULL,
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_groups`
@@ -299,14 +299,14 @@ INSERT INTO `dc_groups` (`id`, `name_group`, `date_created`, `date_modified`, `i
 -- Table structure for table `dc_icons`
 --
 
-CREATE TABLE `dc_icons` (
+CREATE TABLE IF NOT EXISTS `dc_icons` (
   `id` int(100) NOT NULL,
   `name_icons` varchar(250) NOT NULL,
   `date_created` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_icons`
@@ -351,7 +351,7 @@ INSERT INTO `dc_icons` (`id`, `name_icons`, `date_created`, `date_modified`, `id
 -- Table structure for table `dc_menu`
 --
 
-CREATE TABLE `dc_menu` (
+CREATE TABLE IF NOT EXISTS `dc_menu` (
   `id` int(100) NOT NULL,
   `name_menu` varchar(1000) NOT NULL,
   `sub_menu` varchar(100) NOT NULL,
@@ -362,7 +362,7 @@ CREATE TABLE `dc_menu` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_menu`
@@ -398,12 +398,12 @@ INSERT INTO `dc_menu` (`id`, `name_menu`, `sub_menu`, `target`, `icon`, `positio
 -- Table structure for table `dc_menu_accsess`
 --
 
-CREATE TABLE `dc_menu_accsess` (
+CREATE TABLE IF NOT EXISTS `dc_menu_accsess` (
   `id` int(100) NOT NULL,
   `id_menu` int(100) NOT NULL,
   `id_group` int(100) NOT NULL,
   `accsess` int(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_menu_accsess`
@@ -467,8 +467,8 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 -- Table structure for table `dc_news`
 --
 
-CREATE TABLE `dc_news` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `dc_news` (
+  `id` int(10) unsigned NOT NULL,
   `title` varchar(225) NOT NULL,
   `images` text NOT NULL,
   `content` text NOT NULL,
@@ -476,14 +476,16 @@ CREATE TABLE `dc_news` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(11) NOT NULL,
   `id_modifier` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_news`
 --
 
 INSERT INTO `dc_news` (`id`, `title`, `images`, `content`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
-(1, 'hahahahaha', '16425967_1841753219434351_4459195754176750756_n.jpg', '<p>dasdsa<br></p>', '2017-04-17 13:29:43', NULL, 1, NULL);
+(1, 'Shutdown/Maintenance', 'sc_1.jpg', '<ul class="list-product" style="margin-top: 10px; margin-right: 50px; margin-left: 50px; color: rgb(26, 87, 45); font-size: 25px; padding: 0px 20px; position: relative; font-family: "Century Gothic", Muli;"><li>Shutdown/Maintenance</li></ul><p class="text-left" style="font-size: 25px; line-height: 36px; color: rgb(26, 87, 45); font-family: "Century Gothic", Muli;">Points to be considered while buying a scaffold system: What scaffold type would be most suitable for your job? Is the scaffold compatible to other systems available in the market? What is the resale value of the scaffolding to the right authority?</p>', '0000-00-00 00:00:00', '2017-04-28 22:16:07', 0, 1),
+(2, 'dasdada adad adasdas', 'rumah.jpg', '<p>saddadadadadadad</p>', '2017-04-28 22:17:02', NULL, 1, NULL),
+(3, 'asasasa', 'sc_1.jpg', '<p>aassaaa</p>', '2017-04-28 22:33:43', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -491,8 +493,8 @@ INSERT INTO `dc_news` (`id`, `title`, `images`, `content`, `date_created`, `date
 -- Table structure for table `dc_static_content`
 --
 
-CREATE TABLE `dc_static_content` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE IF NOT EXISTS `dc_static_content` (
+  `id` int(10) unsigned NOT NULL,
   `title` varchar(225) NOT NULL,
   `images` text,
   `content` text NOT NULL,
@@ -500,7 +502,7 @@ CREATE TABLE `dc_static_content` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(11) NOT NULL,
   `id_modifier` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_static_content`
@@ -521,7 +523,7 @@ INSERT INTO `dc_static_content` (`id`, `title`, `images`, `content`, `date_creat
 -- Table structure for table `dc_transaction`
 --
 
-CREATE TABLE `dc_transaction` (
+CREATE TABLE IF NOT EXISTS `dc_transaction` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `description` text NOT NULL,
@@ -529,7 +531,7 @@ CREATE TABLE `dc_transaction` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_transaction`
@@ -545,7 +547,7 @@ INSERT INTO `dc_transaction` (`id`, `title`, `description`, `date_created`, `dat
 -- Table structure for table `dc_unit`
 --
 
-CREATE TABLE `dc_unit` (
+CREATE TABLE IF NOT EXISTS `dc_unit` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `id_category` int(15) NOT NULL,
@@ -565,7 +567,7 @@ CREATE TABLE `dc_unit` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_unit`
@@ -580,7 +582,7 @@ INSERT INTO `dc_unit` (`id`, `title`, `id_category`, `id_condition`, `id_brand`,
 -- Table structure for table `dc_user`
 --
 
-CREATE TABLE `dc_user` (
+CREATE TABLE IF NOT EXISTS `dc_user` (
   `id` int(250) NOT NULL,
   `username` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
@@ -593,7 +595,7 @@ CREATE TABLE `dc_user` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(10) NOT NULL,
   `id_modifier` int(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_user`
@@ -609,7 +611,7 @@ INSERT INTO `dc_user` (`id`, `username`, `password`, `email`, `first_name`, `las
 -- Table structure for table `dc_video`
 --
 
-CREATE TABLE `dc_video` (
+CREATE TABLE IF NOT EXISTS `dc_video` (
   `id` int(100) NOT NULL,
   `title` varchar(250) NOT NULL,
   `id_embed` varchar(250) NOT NULL,
@@ -617,7 +619,7 @@ CREATE TABLE `dc_video` (
   `date_modified` datetime DEFAULT NULL,
   `id_creator` int(250) NOT NULL,
   `id_modifier` int(250) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `dc_video`
@@ -764,42 +766,42 @@ ALTER TABLE `dc_video`
 -- AUTO_INCREMENT for table `dc_album_unit`
 --
 ALTER TABLE `dc_album_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `dc_appearance`
 --
 ALTER TABLE `dc_appearance`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_banner`
 --
 ALTER TABLE `dc_banner`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `dc_brand`
 --
 ALTER TABLE `dc_brand`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_category_unit`
 --
 ALTER TABLE `dc_category_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_cicilan_unit`
 --
 ALTER TABLE `dc_cicilan_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_condition`
 --
 ALTER TABLE `dc_condition`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_contact`
 --
 ALTER TABLE `dc_contact`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_default`
 --
@@ -809,7 +811,7 @@ ALTER TABLE `dc_default`
 -- AUTO_INCREMENT for table `dc_event`
 --
 ALTER TABLE `dc_event`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_gallery`
 --
@@ -819,52 +821,52 @@ ALTER TABLE `dc_gallery`
 -- AUTO_INCREMENT for table `dc_groups`
 --
 ALTER TABLE `dc_groups`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `dc_icons`
 --
 ALTER TABLE `dc_icons`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `dc_menu`
 --
 ALTER TABLE `dc_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `dc_menu_accsess`
 --
 ALTER TABLE `dc_menu_accsess`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=62;
 --
 -- AUTO_INCREMENT for table `dc_news`
 --
 ALTER TABLE `dc_news`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `dc_static_content`
 --
 ALTER TABLE `dc_static_content`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `dc_transaction`
 --
 ALTER TABLE `dc_transaction`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `dc_unit`
 --
 ALTER TABLE `dc_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `dc_user`
 --
 ALTER TABLE `dc_user`
-  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(250) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `dc_video`
 --
 ALTER TABLE `dc_video`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
