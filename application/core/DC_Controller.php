@@ -40,6 +40,7 @@ class DC_Controller extends CI_Controller {
 
         //apperance function for all
         $this->appearance=select_where($this->tbl_appearance,'id',1)->row();
+         $this->news_side_bar =select_all_limit_random($this->tbl_news,3);
     }
 
     function name_method($method){
@@ -134,4 +135,5 @@ class DC_Controller extends CI_Controller {
         $data=$this->pagination->create_links();
         return $data;
     }
+
 }
