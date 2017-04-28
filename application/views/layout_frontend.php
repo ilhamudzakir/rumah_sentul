@@ -22,7 +22,7 @@
     <!-- for Facebook -->
     <meta property="og:title" content="<?php echo $data->title ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php  echo base_url() ?> assets/uploads/news/ <?php echo $data->id?>/<?php echo $data->images ?>  <?php }else{ ?> <?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?> <?php }?>" />
+    <meta property="og:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" />
     <meta property="og:url" content="<?php if($this->uri->segment('1')=='news'){ echo base_url()."news/detail/".$data->id."/".url_title($data->title); }else{ echo base_url()."unit/detail/".$data->id."/".url_title($data->title);} ?>" />
     <meta property="og:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" /> 
 
@@ -31,7 +31,7 @@
 
     <meta name="twitter:title" content="<?php echo $data->title?>" />
     <meta name="twitter:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
-    <meta name="twitter:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php  echo base_url() ?> assets/uploads/news/ <?php echo $data->id?>/<?php echo $data->images ?>  <?php }else{ ?> <?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?> <?php }?>" /> 
+    <meta name="twitter:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" /> 
 
 <?php }else{?>
 
