@@ -8,7 +8,7 @@ $no++;
                                      ?>
                                     
                                     
-                                      <div class="masonry-item <?php if($no==1){ ?>w2<?php }?>">
+                                      <div class="masonry-item <?php if($no==2){ ?>w2<?php }?>">
                                                 <span class="thumb-info thumb-info-centered-icons thumb-info-no-borders">
                                                     <span class="thumb-info-wrapper">
                                                         <img src="<?php echo base_url() ?>assets/uploads/gallery/<?php echo $key->id?>/<?php echo $key->images ?>" class="img-responsive" alt="">
