@@ -514,6 +514,34 @@ a, a:hover, a:focus {
 .page-fb{
 	margin-top: 20px;
 }
+
+/*Edited Ilham */
+
+.menu-margin{
+	margin-top: 105px;
+}
+
+.header-image{
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+.title-static{
+	padding-top: 30px;
+	border-bottom: 5px solid #fbc53f;
+	margin-bottom: 20px;
+}
+.title-static h3{
+	margin-bottom: 5px;
+}
+.content-static{
+	padding-bottom: 30px;
+}
+.border-bot{
+	border-bottom: 2px solid #eee; 
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+}
+/*End Edited Ilham */
 @media only screen and (min-width: 768px){
 	.contact-form button.btn.btn-action {
 		float: right;
