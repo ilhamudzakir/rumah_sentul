@@ -606,6 +606,34 @@ a, a:hover, a:focus {
 .content-news{
 	padding-bottom: 30px;
 }
+
+.ui-tabss .ui-tabss-nav li.ui-tabss-active {
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+.ui-tabss .ui-tabss-nav li {
+    border-bottom-width: 0;
+    float: left;
+    list-style: outside none none;
+    margin: 1px 0.2em 0 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    white-space: nowrap;
+}
+.link-tabs{
+	font-size: 15px;
+	padding: 10px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+.link-tabs:hover,.active-tabss {
+    border-bottom: 5px solid #fcc540 !important;
+    color: #1b1b1a;
+    font-weight: normal;
+    background: #eee;
+}
+
 /*End Edited Ilham */
 @media only screen and (min-width: 768px){
 	.contact-form button.btn.btn-action {

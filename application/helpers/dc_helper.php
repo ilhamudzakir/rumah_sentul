@@ -100,13 +100,24 @@ function get_client_ip_server() {
 		$data = $ci->db->get();
 		return $data;
 	}
-        function select_where_limit_order($table,$column,$where,$limit,$order_by,$order_type){
+    function select_where_limit_order($table,$column,$where,$limit,$order_by,$order_type){
 		$ci=& get_instance();
 		$ci->load->database('default',TRUE);
 		$ci->db->select('*');
 		$ci->db->where($column,$where);
                 $ci->db->order_by($order_by, $order_type);
 		$data = $ci->db->get($table,$limit);
+		return $data;
+	}
+
+	function select_where_offset_limit_order($table,$column,$where,$offset,$limit,$order_by,$order_type){
+		$ci=& get_instance();
+		$ci->load->database('default',TRUE);
+		$ci->db->select('*');
+		$ci->db->where($column,$where);
+        $ci->db->order_by($order_by, $order_type);
+		$ci->db->limit($offset, $limit);
+		$data = $ci->db->get($table);
 		return $data;
 	}
 	function select_where_array($table,$where){

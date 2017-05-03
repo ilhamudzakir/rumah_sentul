@@ -91,6 +91,7 @@ class DC_Controller extends CI_Controller {
         $config["per_page"] = 1;
         $config['use_page_numbers'] = TRUE;
         $config['num_links'] = $total_row;
+        $config['first_url'] = '1';
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
         $config['num_tag_open'] = '<li>';
@@ -117,6 +118,7 @@ class DC_Controller extends CI_Controller {
         $config["per_page"] = 1;
         $config['use_page_numbers'] = TRUE;
         $config['num_links'] = $total_row;
+        $config['first_url'] = '1';
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
         $config['num_tag_open'] = '<li>';
