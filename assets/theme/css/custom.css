@@ -665,6 +665,17 @@ a, a:hover, a:focus {
 
 /* rifan */
 
+.thumb-info-caption .thumb-info-caption-text, .thumb-info-caption p {
+    
+    margin: 0 0 20px !important;
+    
+}
+
+.img_unit{
+	min-height: 260px !important;
+	max-height: 260px !important;
+}
+
 .b-contact{
 	background-color:#FFF !important;
 	    margin-top: 40px;

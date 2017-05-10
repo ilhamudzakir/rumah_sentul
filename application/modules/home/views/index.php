@@ -98,7 +98,7 @@
 													<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
 														<span class="thumb-info-side-image-wrapper p-none">
 														   <a href="#"> 
-																<img src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="">
+																<img class="img_unit" src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="">
 															</a>
 														</span>
 														<span class="thumb-info-caption">
