@@ -79,35 +79,35 @@
                       <div class="form-group">
                         <label class="form-label">Jumlah Kamar Mandi</label>
                         <div class="controls">
-                          <input type="text" required name="kamar_mandi" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_mandi; } ?>">
+                          <input type="text" name="kamar_mandi" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_mandi; } ?>">
                         </div>
                       </div>
 
                        <div class="form-group">
                         <label class="form-label">Jumlah Kamar Tidur</label>
                         <div class="controls">
-                          <input type="text" required name="kamar_tidur" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_tidur; } ?>">
+                          <input type="text" name="kamar_tidur" class="form-control" value="<?php if(isset($data)){ echo $data->kamar_tidur; } ?>">
                         </div>
                       </div>
 
                        <div class="form-group">
                         <label class="form-label">Jumlah Garasi</label>
                         <div class="controls">
-                          <input type="text" required name="garasi" class="form-control" value="<?php if(isset($data)){ echo $data->garasi; } ?>">
+                          <input type="text" name="garasi" class="form-control" value="<?php if(isset($data)){ echo $data->garasi; } ?>">
                         </div>
                       </div>
 
                        <div class="form-group">
                         <label class="form-label">Luas Tanah</label>
                         <div class="controls">
-                          <input type="text" required name="luas_tanah" class="form-control" value="<?php if(isset($data)){ echo $data->luas_tanah; } ?>">
+                          <input type="text" name="luas_tanah" class="form-control" value="<?php if(isset($data)){ echo $data->luas_tanah; } ?>">
                         </div>
                       </div>
 
                        <div class="form-group">
                         <label class="form-label">Luas Bangunan</label>
                         <div class="controls">
-                          <input type="text" required name="luas_bangunan" class="form-control" value="<?php if(isset($data)){ echo $data->luas_bangunan; } ?>">
+                          <input type="text" name="luas_bangunan" class="form-control" value="<?php if(isset($data)){ echo $data->luas_bangunan; } ?>">
                         </div>
                       </div>
 
@@ -115,7 +115,7 @@
                        <div class="form-group">
                         <label class="form-label">Price</label>
                         <div class="controls">
-                          <input type="text" name="price" required class="form-control" value="<?php if(isset($data)){ echo $data->price; } ?>">
+                          <input type="text" name="price" class="form-control" value="<?php if(isset($data)){ echo $data->price; } ?>">
                         </div>
                       </div>
 
