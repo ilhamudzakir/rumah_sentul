@@ -672,9 +672,10 @@ class admin_unit extends DC_controller {
 		$table_field = $this->db->list_fields($this->tbl_unit);
 		$cicilan_unit=select_where($this->tbl_unit,'id',$id)->row();
 		$update = array();
-        foreach ($table_field as $field) {
-            $update[$field] = $this->input->post($field);
-        }
+        $update['dp_disc'] = $this->input->post('dp_disc');
+        $update['cicilan_disc'] = $this->input->post('cicilan_disc');
+        $update['price_disc'] = $this->input->post('price_disc');
+        $update['price_offer'] = $this->input->post('price_offer');
         $update['date_modified']= date("Y-m-d H:i:s");
         $update['id_modifier']=$this->session->userdata['admin']['id'];
         $query=update($this->tbl_unit,$update,'id',$id);

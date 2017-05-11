@@ -34,7 +34,7 @@
                   <tr >
                     <td><?php echo $no ?></td>
                     <td><?php echo $data->title ?></td>
-                    <td class="text-center"><a href="<?php echo base_url()."".$controller."/cicilan_unit/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Promo Actve" class="btn btn-success  btn-xs btn-mini tip" type="button">Active</button></a></td>
+                    <td class="text-center"><a href="<?php echo base_url()."".$controller."/cicilan_unit/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Promo <?php if($data->price_offer!=null){echo"Active";}else{echo"Not Active";} ?>" class="btn btn-<?php if($data->price_offer!=null){echo"success";}else{echo"default";} ?>  btn-xs btn-mini tip" type="button"><?php if($data->price_offer!=null){echo"Active";}else{echo"Not Active";} ?></button></a></td>
                     <td>
                     <a href="<?php echo base_url()."".$controller."/album_unit/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Album" class="btn btn-info btn-xs btn-mini tip" type="button"><i class="fa fa-picture-o"></i></button></a>
                     <a href="<?php echo base_url()."".$controller."/".$function."_form/"."".$data->id; ?>" ><button   data-toggle="tooltip" data-original-title="Edit" class="btn btn-warning btn-xs btn-mini tip" type="button"><i class="fa fa-pencil"></i></button></a> 
