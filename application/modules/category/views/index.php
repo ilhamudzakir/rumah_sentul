@@ -53,14 +53,18 @@
 															<h2 class="listing-title">
 																<a href=""><?php echo $key->title ?></a>
 															</h2>
+															<?php if($key->id_transaction=='1'){ ?>
 															<div class="listing-type listing-sell">Rumah Dijual</div>
-															<div class="listing-badges primer"> PRIMER </div>
+															<?php }else{ ?>
+															<div class="listing-type listing-rent">Rumah Disewa</div>
+															<?php } ?>
+															<div class="listing-badges <?php echo $key->kondisi ?>"> <?php echo $key->kondisi ?> </div>
 														</div>
 													</div>
 													<div class="col-sm-6 list-right">
 														<div class="right-info">
-															<div class="price-info">Rp. 4.950.000.000 </div>
-															<div class="tag-price">Cicilan : 28.4 juta/bulan</div>
+															<div class="price-info"><?php echo idr($key->price) ?></div>
+															<!-- <div class="tag-price">Cicilan : 28.4 juta/bulan</div> -->
 														</div>
 													</div>
 												</div>
@@ -68,19 +72,19 @@
 													<div class="col-sm-6 pd">
 														
 														<div class="listing-room-info">
-															<div class="bed-info">K.Tidur : <b>3</b> </div>
-															<div class="bath-info">K.Mandi : <b>3</b> </div>
-															<div class="garage-info">Garasi : <b>1</b> </div>
+															<div class="bed-info">K.Tidur : <b><?php echo $key->kamar_tidur ?></b> </div>
+															<div class="bath-info">K.Mandi : <b><?php echo $key->kamar_mandi ?></b> </div>
+															<div class="garage-info">Garasi : <b><?php echo $key->garasi ?></b> </div>
 														</div>
 														<div class="listing-size-info">
-															<div class="building-size"> Luas Bangunan : <b>110,00 m<sup>2</sup></b></div>
-															<div class="land-size"> Luas Tanah : <b>209,00 m<sup>2</sup></b></div>
+															<div class="building-size"> Luas Bangunan : <b><?php echo $key->luas_bangunan ?> m<sup>2</sup></b></div>
+															<div class="land-size"> Luas Tanah : <b><?php echo $key->luas_tanah ?> m<sup>2</sup></b></div>
 														</div>
 													</div>
 													<div class="col-sm-6 pd">
 														<div class="right-info">
-															<div class="agency-info">Saffron Sentul City</div>
-															<div class="posted-date">Tayang Sejak 1 hari yang lalu</div>
+															<div class="agency-info"><?php echo $key->brand ?></div>
+															<!-- <div class="posted-date">Tayang Sejak 1 hari yang lalu</div> -->
 														</div>
 													</div>
 												</div>
@@ -90,7 +94,7 @@
 													<button  type="button" class="btn btn-default contact-agent-btn" data-toggle="modal" data-target="#ContactModal"><i class="fa fa-phone"></i><span>Kontak Kami</span></button>
 												</div>
 												<div class="right-button form-group pull-right pd">
-													<a href="detail.html" title="Spring Mountain Residence Sentul City" class="btn btn-action track-click" onclick="fbq('track', 'PageView');">Lihat Detil</a>
+													<a href="<?php echo base_url() ?>unit/detail/<?php echo $key->id ?>/<?php echo url_title($key->title) ?>" title="<?php echo $key->title ?>" class="btn btn-action track-click">Lihat Detil</a>
 												</div>
 											</div>
 											<div class="clearfix"></div>

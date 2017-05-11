@@ -31,6 +31,10 @@ class category extends DC_controller {
         	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
         	$key->id_image=$album->id;
         	$key->image=$album->images;
+            $brand=select_where($this->tbl_brand,'id',$key->id_brand)->row();
+            $key->brand=$brand->title;
+            $kondisi=select_where($this->tbl_condition,'id',$key->id_condition)->row();
+            $key->kondisi=$kondisi->title;
         }
         $data['data']=$unit;
 		$data['paging']=$this->pagination_param(base_url()."category/primer/page/",10,$unit_total);
