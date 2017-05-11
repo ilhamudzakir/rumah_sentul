@@ -24,16 +24,20 @@ class category extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='category';
         //custom
-        $unit=select_where_limit_order($this->tbl_unit,'id_condition',2,1,'date_created','DESC');
+       $unit=select_where_limit_order($this->tbl_unit,'id_condition',2,10,'date_created','DESC');
         $unit_total=select_where_order($this->tbl_unit,'id_condition',2,'date_created','DESC')->num_rows();
         $unit=$unit->result();
         foreach ($unit as $key) {
         	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
         	$key->id_image=$album->id;
         	$key->image=$album->images;
+            $brand=select_where($this->tbl_brand,'id',$key->id_brand)->row();
+            $key->brand=$brand->title;
+            $kondisi=select_where($this->tbl_condition,'id',$key->id_condition)->row();
+            $key->kondisi=$kondisi->title;
         }
         $data['data']=$unit;
-		$data['paging']=$this->pagination_param(base_url()."category/page/2",'primer',$unit_total,1);
+		$data['paging']=$this->pagination_param(base_url()."category/primer/page/",10,$unit_total);
         $data['page'] = $this->load->view('category/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
@@ -42,7 +46,7 @@ class category extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='category';
         //custom
-        $unit=select_where_limit_order($this->tbl_unit,'id_condition',1,1,'date_created','DESC');
+        $unit=select_where_limit_order($this->tbl_unit,'id_condition',1,10,'date_created','DESC');
         $unit_total=select_where_order($this->tbl_unit,'id_condition',1,'date_created','DESC')->num_rows();
         $unit=$unit->result();
         foreach ($unit as $key) {
@@ -51,7 +55,7 @@ class category extends DC_controller {
         	$key->image=$album->images;
         }
         $data['data']=$unit;
-		$data['paging']=$this->pagination_param(base_url()."category/page/1",'second',$unit_total,1);
+		$data['paging']=$this->pagination_param(base_url()."category/second/page/",10,$unit_total);
         $data['page'] = $this->load->view('category/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
@@ -60,8 +64,16 @@ class category extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='category';
         //custom
-        
-		$data['paging']=$this->pagination_param(base_url()."category/page/",'populer',10,100);
+        $unit=select_all_limit_order($this->tbl_unit,10,'date_created','DESC');
+        $unit_total=get_count($this->tbl_unit);
+        $unit=$unit->result();
+        foreach ($unit as $key) {
+        	$album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+        	$key->id_image=$album->id;
+        	$key->image=$album->images;
+        }
+        $data['data']=$unit;
+		$data['paging']=$this->pagination_param(base_url()."category/populer/page/",10,$unit_total);
         $data['page'] = $this->load->view('category/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
