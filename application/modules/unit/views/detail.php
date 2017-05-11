@@ -93,9 +93,9 @@ $no++;
 						<div class="col-sm-4 list-right">
 							<div class="right-info">
 								<div class="price-info"><?php echo idr($data->price);?> </div>
-								<div class="col-sm-8 right pd">
+								<div class="col-sm-12 right pd">
 									<div class="tag-price stat">
-										<?php if($data->condition_id == 1){?> KPR > CASH  <?php }else{ ?>  KPR?KPA > BERTAHAP/CASH <?php }?>
+										<?php if($data->condition_id == 1){?> KPR > CASH  <?php }else{ ?>  KPR/KPA > BERTAHAP/CASH <?php }?>
 									</div>
 									
 								</div>
@@ -186,15 +186,15 @@ $no++;
 								<span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center thumb-custom">
 									<span class="thumb-info-side-image-wrapper p-none">
 									   <a href="#"> 
-											<img src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="<?php echo $key->title ?>">
+											<img class="img_unit_dt" src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="<?php echo $key->title ?>">
 										</a>
 									</span>
 									<span class="thumb-info-caption">
 										<div class="thumb-info-caption-text title-info-caption">
-											<span class="title-caption"><a id="cap-blue" title="<?php echo $key->title ?>" href="<?php echo base_url()."unit/detail/".$key->id."/".url_title($key->title) ?>"><?php echo $key->title ?></a></span>
+											<span class="title-caption_dt"><a id="cap-blue" title="<?php echo $key->title ?>" href="<?php echo base_url()."unit/detail/".$key->id."/".url_title($key->title) ?>"><?php echo $key->title ?></a></span>
 										   
 										</div>
-										<div class="specs-highlight-front">
+										<div class="specs-highlight-front_dt">
 												  	<span>LB: <?php echo $key->luas_bangunan;?> m<sup>2</sup></span>
 													<span>LT: <?php echo $key->luas_tanah;?> m<sup>2</sup></span>
 													<span>KT: <?php echo $key->kamar_tidur;?></span>
