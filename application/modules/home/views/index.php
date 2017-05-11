@@ -32,18 +32,18 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-3 left-text">
-                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="category.html">RUMAH</a>
+                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="<?php echo base_url() ?>category">RUMAH</a>
                                 <hr class="tb">
                                 </h1>
                             </div>
                             <div class="col-md-3 right-text">
-                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="category.html">RUKO</a>
+                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="<?php echo base_url() ?>category">RUKO</a>
                                 <hr class="tb">
                                 </h1>
                             </div>
                             
                             <div class="col-md-12 col-centered down-text clearfix">
-                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="category.html">APARTEMENT</a>
+                                <h1 class="mt-lg mb-sm text-banner" ><a id="a-tb" href="<?php echo base_url() ?>category">APARTEMENT</a>
                                 <hr class="tb">
                                 </h1>
                             </div>
