@@ -111,11 +111,11 @@ class DC_Controller extends CI_Controller {
         return $data;
     }
 
-    function pagination_param($base_url,$param,$total_row,$total_item){
+    function pagination_param($base_url,$total_row,$total_item){
         $config = array();
         $config["base_url"] = $base_url;
         $config["total_rows"] = $total_row;
-        $config["per_page"] = 1;
+        $config["per_page"] = 10;
         $config['use_page_numbers'] = TRUE;
         $config['num_links'] = $total_row;
         $config['first_url'] = '1';

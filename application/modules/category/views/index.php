@@ -100,12 +100,6 @@
 										<div id="serp-pagination" class="serp-pagination">
 											<div class="row">
 												<div class="col-sm-12">
-													<div class="serp-result-info">
-														1 - 15 dari 372.941 Hasil                
-													</div>
-												</div>
-												
-												<div class="col-sm-12">
 													
 													<div class="serp-paging">
 														<?php echo $paging ?>
