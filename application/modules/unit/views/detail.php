@@ -130,7 +130,8 @@ $no++;
 				</div>
 				
 				<div class="listing-history-info">
-					<i class="fa fa-clock-o"></i><?php echo get_date($data->date_created);?> </div>
+					<i class="fa fa-clock-o"></i><?php echo get_date($data->date_created);?> 
+				</div>
 				<div class="listing-specs">
 					<h3>Detail</h3>
 					<div class="row">
