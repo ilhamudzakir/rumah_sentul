@@ -685,7 +685,7 @@ class admin_unit extends DC_controller {
 			$this->session->set_flashdata('notif','error');
 			$this->session->set_flashdata('msg','Your data not updated');
 		}
-		redirect($data['controller']."/".$data['function']);
+		redirect($data['controller']);
 	}
 }
 

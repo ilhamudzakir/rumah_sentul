@@ -28,11 +28,20 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="form-label">Price</label>
+                        <label class="form-label">Price Discount</label>
                         <div class="controls">
                           <input type="text" name="price_disc" class="form-control" value="<?php if(isset($data)){ echo $data->price_disc; } ?>">
                         </div>
                       </div>
+
+                      <div class="form-group">
+                        <label class="form-label">Promo</label>
+                        <div class="controls">
+                          <input type="checkbox" name="price_offer" class="form-control" <?php if(isset($data->price_offer; )){ echo"checked";} ?> value="1">
+                        </div>
+                      </div>
+
+
 
                         <div class="form-group">
                         <div class="controls">
