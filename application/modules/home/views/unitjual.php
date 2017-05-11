@@ -1,9 +1,9 @@
- <div class="row mt-lg">
-                                    <?php foreach ($unit_jual as $key) { ?>
-                                    
-                                    
-                                        <div class="col-sm-4 pb-xlg">
-                                            <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+
+     <?php foreach ($unit_jual as $key) { ?>
+
+
+         <div class="col-sm-4 pb-xlg">
+             <div class="appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
                                                 <span class="thumb-info thumb-info-no-zoom thumb-info-custom mb-xl center">
                                                     <span class="thumb-info-side-image-wrapper p-none">
                                                         <img src="<?php echo base_url() ?>assets/uploads/album-unit/<?php echo $key->id_image ?>/<?php echo $key->image ?>" class="img-responsive" alt="">
@@ -16,8 +16,6 @@
                                                         </span>
                                                     </span>
                                                 </span>
-                                            </div>
-                                        </div>
-                                       <?php } ?>
-                                        
-                                    </div>
+             </div>
+         </div>
+     <?php } ?>
