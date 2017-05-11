@@ -37,7 +37,7 @@
                       <div class="form-group">
                         <label class="form-label">Promo</label>
                         <div class="controls">
-                          <input type="checkbox" name="price_offer" class="form-control" <?php if(isset($data->price_offer; )){ echo"checked";} ?> value="1">
+                          <input type="checkbox" name="price_offer" class="form-control" <?php if(isset($data->price_offer)){ echo"checked";} ?> value="1">
                         </div>
                       </div>
 
