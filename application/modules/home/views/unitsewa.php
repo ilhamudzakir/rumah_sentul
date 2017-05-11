@@ -15,11 +15,10 @@
                        
                     </div>
                     <div class="specs-highlight-front">
-                        <span>LB: 90,00 m²</span>
-                        <span>LT: 160,00 m²</span>
-                        <span>KT: 5</span>
-                        <span>KM: 2</span>
-                        
+                        <span>LB: <?php echo $key->luas_bangunan;?> m<sup>2</sup></span>
+                        <span>LT: <?php echo $key->luas_tanah;?> m<sup>2</sup></span>
+                        <span>KT: <?php echo $key->kamar_tidur;?></span>
+                        <span>KM: <?php echo $key->kamar_mandi;?></span>
                     </div>
                 </span>
             </span>
