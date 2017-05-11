@@ -38,7 +38,7 @@
 						</div>
 
 						<h2 class="mb-sm mt-sm"><strong>Contact</strong> Us</h2>
-						<form id="contactForm" action="" method="POST" novalidate="novalidate">
+						<form id="contactForm" action="<?php echo base_url() ?><?php echo $controller."/contact_send"?>" method="POST" novalidate="novalidate">
 							<div class="row">
 								<div class="form-group">
 									<div class="col-md-6">

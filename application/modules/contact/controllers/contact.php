@@ -24,6 +24,31 @@ class contact extends DC_controller {
         $data['page'] = $this->load->view('contact/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
-	
+
+
+	function contact_send()
+	{
+		$this->load->library('email');
+		$email = $this->input->post("email");
+		$subject = $this->input->post("subject");
+		$message = $this->input->post("message");
+		$name = $this->input->post("name");
+
+		$data = $this->controller_attr;
+		$data['function'] = 'contact';
+		if ($email) {
+			$this->email->to('rumahsentul@yopmail.com');
+			$this->email->from($email, 'rumahsentull');
+			$this->email->subject($subject . $name);
+			$this->email->message($message);
+			$this->email->send();
+		}
+		$data['page'] = $this->load->view('contact/index',$data,true);
+		$this->load->view('layout_frontend',$data);
+
+	}
+
+
+
 }
 
