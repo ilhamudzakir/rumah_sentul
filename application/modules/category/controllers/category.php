@@ -96,6 +96,29 @@ class category extends DC_controller {
         $data['page'] = $this->load->view('category/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
-	
+
+
+
+	function contact_send()
+	{
+		$this->load->library('email');
+		$email = $this->input->post("email");
+		$phone = $this->input->post("phone");
+		$name = $this->input->post("name");
+
+		$data = $this->controller_attr;
+		$data['function'] = 'contact_send';
+		if ($email) {
+			$this->email->to('rumahsentul@yopmail.com');
+			$this->email->from($email, 'rumahsentull');
+			$this->email->subject('Number Customer' . $name);
+			$this->email->message($phone);
+			$this->email->send();
+		}
+
+		redirect('category/primer');
+	}
+
+
 }
 

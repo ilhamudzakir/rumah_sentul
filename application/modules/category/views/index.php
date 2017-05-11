@@ -180,7 +180,7 @@
 							</div>
 							<div class="col-sm-12">
 								<div class="contact-form">
-									<form action="">
+									<form action="<?php echo base_url() ?><?php echo $controller."/contact_send"?>">
 										<div class="form-group">
 											<input type="text" class="form-control" id="as-name" name="name" placeholder="Nama Anda" xrequired="required" value="">
 										</div>
@@ -191,16 +191,16 @@
 										  <input type="text" class="form-control phone-contact" id="as-phone" name="phone" placeholder="Telepon (Contoh: 6221998xxxx)" xrequired="required" value="">
 										</div>
 										<p style="font-size: 12px; color: #999; font-style: italic;">Saat anda menghubungi agen properti / pengembang, jangan lupa untuk menyebutkan bahwa anda melihat listing ini di rumahrumahsentulcity.com.</p>
-										<div class="checkbox">
-										  <label>
-											<input type="checkbox" id="as-subscribe" name="as-subscribe" checked="checked">
-											<p>Saya ingin menerima informasi dari rumahrumahsentulcity.com </p>
-										  </label>
-										  <label>
-											<input type="checkbox" id="as-term" name="as-term" checked="checked" required="true">
-											<p>Saya menyetujui <a href="/syarat-dan-ketentuan-id.html" target="_blank">Syarat dan Ketentuan</a> yang berlaku di rumahrumahsentulcity.com</p>
-										  </label>
-										</div>
+<!--										<div class="checkbox">-->
+<!--										  <label>-->
+<!--											<input type="checkbox" id="as-subscribe" name="as-subscribe" checked="checked">-->
+<!--											<p>Saya ingin menerima informasi dari rumahrumahsentulcity.com </p>-->
+<!--										  </label>-->
+<!--										  <label>-->
+<!--											<input type="checkbox" id="as-term" name="as-term" checked="checked" required="true">-->
+<!--											<p>Saya menyetujui <a href="/syarat-dan-ketentuan-id.html" target="_blank">Syarat dan Ketentuan</a> yang berlaku di rumahrumahsentulcity.com</p>-->
+<!--										  </label>-->
+<!--										</div>-->
 										<button type="submit" id="contact-agent-form-submit-btn" class="btn btn-action">Kirim Sekarang</button>
 									</form>
 								</div>
