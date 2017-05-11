@@ -126,8 +126,9 @@
 								</span>
 							</div>
 
-							  <?php } ?>
 						</div>
+						<?php } ?>
+
 					</div>
 				</div>
 				 
