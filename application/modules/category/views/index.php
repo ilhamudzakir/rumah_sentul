@@ -32,9 +32,9 @@
 										</div>
 										<div class="col-sm-6 btl">
 											<ul class="pull-right">
-												<li  class="link-tabs <?php if($this->uri->segment(2)=='primer'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="primer">Primer</a></li>
-												<li class="link-tabs <?php if($this->uri->segment(2)=='second'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="second">Second</a></li>
-												<li class="link-tabs <?php if($this->uri->segment(2)=='populer'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="populer">Terpopuler</a></li>
+												<li  class="link-tabs <?php if($this->uri->segment(2)=='primer'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="<?php echo base_url() ?>category/primer<?php echo $get_search ?>">Primer</a></li>
+												<li class="link-tabs <?php if($this->uri->segment(2)=='second'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="<?php echo base_url() ?>category/second<?php echo $get_search ?>">Second</a></li>
+												<li class="link-tabs <?php if($this->uri->segment(2)=='populer'){echo"active-tabss"; } ?> serp-sorting"><a class="a-sort" href="<?php echo base_url() ?>category/populer<?php echo $get_search ?>">Terpopuler</a></li>
 											</ul>
 										</div>
 									

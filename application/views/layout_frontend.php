@@ -118,16 +118,16 @@
                                     <ul class="menu-navigation">
                                         <li><span class="border-navi"></span><a href="<?php echo base_url() ?>category">Dijual</a>
                                         <ul class="child-navigation">
-                                            <li><a href="<?php echo base_url() ?>category">Rumah</a></li>
-                                            <li><a href="<?php echo base_url() ?>category">Apartement</a></li>
-                                            <li><a href="<?php echo base_url() ?>category">Ruko</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=2&category=1">Rumah</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=2&category=2">Apartement</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=2&category=3">Ruko</a></li>
                                         </ul>
                                         </li>
                                         <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>category">Disewa </a>
                                         <ul class="child-navigation">
-                                            <li><a href="<?php echo base_url() ?>category">Rumah</a></li>
-                                            <li><a href="<?php echo base_url() ?>category">Apartement</a></li>
-                                            <li><a href="<?php echo base_url() ?>category">Ruko</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=1&category=1">Rumah</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=1&category=2">Apartement</a></li>
+                                            <li><a href="<?php echo base_url() ?>category?status=1&category=3">Ruko</a></li>
                                         </ul></li>
                                         <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>fasilitas">Fasilitas</a></li>
                                         <li><span class="border-navi"></span> <a href="<?php echo base_url() ?>price-list">Price List</a></li>
