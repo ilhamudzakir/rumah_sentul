@@ -15,10 +15,10 @@
                        
                     </div>
                     <div class="specs-highlight-front">
-                        <span>LB: <?php echo $key->luas_bangunan;?> m<sup>2</sup></span>
-                        <span>LT: <?php echo $key->luas_tanah;?> m<sup>2</sup></span>
-                        <span>KT: <?php echo $key->kamar_tidur;?></span>
-                        <span>KM: <?php echo $key->kamar_mandi;?></span>
+                         <span>LB: <?php echo ($key->luas_bangunan != "0")?$key->luas_bangunan:"N/A";?> m<sup>2</sup></span>
+                                <span>LT: <?php echo ($key->luas_tanah != "0")?$key->luas_tanah:"N/A";?> m<sup>2</sup></span>
+                                <span>KT: <?php echo ($key->kamar_tidur != "0")?$key->kamar_tidur:"N/A";?></span>
+                                <span>KM: <?php echo ($key->kamar_mandi != "0")?$key->kamar_mandi:"N/A";?></span>
                     </div>
                 </span>
             </span>
