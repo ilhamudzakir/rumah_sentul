@@ -27,8 +27,8 @@
 								<div id="">
 									<div class="col-md-12 bb">
 										<div class="col-sm-6 btl breadcumb">
-											<span class="spb">Rumah Dijual </span>
-											<span class="litle_spb">( 123.456 rumah ) </span>
+											<span class="spb"><?php echo $status." ".$breadcumb ?></span>
+											<span class="litle_spb">( <?php echo $unit_total." ".$breadcumb ?>  ) </span>
 										</div>
 										<div class="col-sm-6 btl">
 											<ul class="pull-right">

@@ -35,12 +35,17 @@ class category extends DC_controller {
                 'id_category'=> $_GET['category'], 
                 );
             $get_search='?status='.$_GET['status']."&category=".$_GET['category'];
+            $breadcumb=select_where($this->tbl_category_unit,'id',$_GET['category'])->row();
+            $transaction=select_where($this->tbl_transaction,'id',$_GET['status'])->row();
+            $data['status']=$transaction->title;
+            $data['breadcumb']=$breadcumb->title;
         }else{
              $array_search=array(
                 'id_condition' => 2,
                 );
-
             $get_search='';
+            $data['breadcumb']='Search';
+            $data['status']='';
         }
         $unit=select_where_array_limit_order($this->tbl_unit,$array_search,10,'date_created','DESC');
         $unit_total=select_where_array_order($this->tbl_unit,$array_search,'date_created','DESC')->num_rows();
@@ -54,6 +59,7 @@ class category extends DC_controller {
             $kondisi=select_where($this->tbl_condition,'id',$key->id_condition)->row();
             $key->kondisi=$kondisi->title;
         }
+        $data['unit_total']=$unit_total;
         $data['get_search']=$get_search;
         $data['data']=$unit;
 		$data['paging']=$this->pagination_param(base_url()."category/primer/page/".$get_search,10,$unit_total);
@@ -72,12 +78,17 @@ class category extends DC_controller {
                 'id_category'=> $_GET['category'], 
                 );
             $get_search='?status='.$_GET['status']."&category=".$_GET['category'];
+            $breadcumb=select_where($this->tbl_category_unit,'id',$_GET['category'])->row();
+            $data['breadcumb']=$breadcumb->title;
+            $transaction=select_where($this->tbl_transaction,'id',$_GET['status'])->row();
+            $data['status']=$transaction->title;
         }else{
              $array_search=array(
                 'id_condition' => 1,
                 );
-
             $get_search='';
+            $data['breadcumb']='Search';
+            $data['status']='';
         }
         $unit=select_where_array_limit_order($this->tbl_unit,$array_search,10,'date_created','DESC');
         $unit_total=select_where_array_order($this->tbl_unit,$array_search,'date_created','DESC')->num_rows();
@@ -87,6 +98,8 @@ class category extends DC_controller {
         	$key->id_image=$album->id;
         	$key->image=$album->images;
         }
+
+        $data['unit_total']=$unit_total;
         $data['get_search']=$get_search;
         $data['data']=$unit;
 		$data['paging']=$this->pagination_param(base_url()."category/second/page/".$get_search,10,$unit_total);
@@ -104,12 +117,17 @@ class category extends DC_controller {
                 'id_category'=> $_GET['category'], 
                 );
             $get_search='?status='.$_GET['status']."&category=".$_GET['category'];
+            $breadcumb=select_where($this->tbl_category_unit,'id',$_GET['category'])->row();
+            $data['breadcumb']=$breadcumb->title;
+            $transaction=select_where($this->tbl_transaction,'id',$_GET['status'])->row();
+            $data['status']=$transaction->title;
         }else{
              $array_search=array(
                 'id !='=>1
                 );
-
             $get_search='';
+            $data['breadcumb']='Search';
+            $data['status']='';
         }
         $unit=select_where_array_limit_order($this->tbl_unit,$array_search,10,'date_created','DESC');
         $unit_total=select_where_array_order($this->tbl_unit,$array_search,'date_created','DESC')->num_rows();
@@ -119,6 +137,7 @@ class category extends DC_controller {
         	$key->id_image=$album->id;
         	$key->image=$album->images;
         }
+        $data['unit_total']=$unit_total;
         $data['get_search']=$get_search;
         $data['data']=$unit;
 		$data['paging']=$this->pagination_param(base_url()."category/populer/page/".$get_search,10,$unit_total);
