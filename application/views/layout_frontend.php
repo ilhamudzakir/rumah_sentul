@@ -177,11 +177,8 @@
                         </div>
                         <ul class="list-footer">
                             <li><a href="<?php echo base_url() ?>design-interior">Design Interior</a></li>
-                            <li><a href="<?php echo base_url() ?>event">Event</a></li>
                             <li><a href="<?php echo base_url() ?>news">News</a></li>
                             <li><a href="<?php echo base_url() ?>category">Promo</a></li>
-                            <li><a href="<?php echo base_url() ?>tips">Tips</a></li>
-                            <li><a href="<?php echo base_url() ?>event">Wisata</a></li>
                             <li><a href="<?php echo base_url() ?>price-list">Download Price List</a></li>
                         </ul>
 
