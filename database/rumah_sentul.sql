@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2017 at 11:33 AM
+-- Generation Time: May 13, 2017 at 11:39 AM
 -- Server version: 10.1.13-MariaDB
--- PHP Version: 5.6.20
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -319,6 +319,30 @@ INSERT INTO `dc_event` (`id`, `title`, `images`, `description`, `date_start`, `d
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dc_fasilitas`
+--
+
+CREATE TABLE `dc_fasilitas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(225) NOT NULL,
+  `images` text NOT NULL,
+  `content` text NOT NULL,
+  `date_created` datetime NOT NULL,
+  `date_modified` datetime DEFAULT NULL,
+  `id_creator` int(11) NOT NULL,
+  `id_modifier` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dc_fasilitas`
+--
+
+INSERT INTO `dc_fasilitas` (`id`, `title`, `images`, `content`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
+(1, 'dasdsa', 'rumah.jpg', '<p>asd<br></p>', '2017-05-13 16:12:39', NULL, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_gallery`
 --
 
@@ -463,7 +487,8 @@ INSERT INTO `dc_menu` (`id`, `name_menu`, `sub_menu`, `target`, `icon`, `positio
 (20, 'Brand', '15', 'brand', 'none', 5, '2017-04-22 17:44:46', NULL, 1, NULL),
 (21, 'Event', '1', 'event', 'none', 4, '2017-04-24 20:52:21', NULL, 1, NULL),
 (22, 'Gallery', '1', 'gallery', 'none', 5, '2017-04-27 15:07:25', NULL, 1, NULL),
-(23, 'Video', '1', 'video', 'none', 6, '2017-04-27 15:07:41', NULL, 1, NULL);
+(23, 'Video', '1', 'video', 'none', 6, '2017-04-27 15:07:41', NULL, 1, NULL),
+(24, 'Fasilitas', '15', 'fasilitas', 'none', 6, '2017-05-13 16:05:46', NULL, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -532,7 +557,8 @@ INSERT INTO `dc_menu_accsess` (`id`, `id_menu`, `id_group`, `accsess`) VALUES
 (58, 22, 1, 1),
 (59, 23, 1, 1),
 (60, 22, 5, 0),
-(61, 23, 5, 0);
+(61, 23, 5, 0),
+(62, 24, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -586,7 +612,6 @@ CREATE TABLE `dc_static_content` (
 INSERT INTO `dc_static_content` (`id`, `title`, `images`, `content`, `date_created`, `date_modified`, `id_creator`, `id_modifier`) VALUES
 (21, 'About', 'apartemen.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:48:02', 0, 1),
 (22, 'Price List', 'test.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:48:14', 0, 1),
-(23, 'Fasilitas', 'ruko.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:48:26', 0, 1),
 (24, 'Design Interior', 'rumah.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:49:07', 0, 1),
 (25, 'Promo', 'rumah.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:48:37', 0, 1),
 (26, 'Tips', 'test.jpg', 'Vulputate himenaeos praesent erat vestibulum facilisis ultricies condimentum lacus euismod fusce nibh a tellus a phasellus viverra rutrum ligula sem erat odio adipiscing quam. Vel sagittis sed lacus dictumst vestibulum nam consectetur odio scelerisque lacus non convallis dis auctor integer quisque morbi nibh iaculis et nec senectus ac. A at vestibulum porta nunc turpis scelerisque leo placerat vivamus at dictum faucibus mollis natoque urna. Ultricies nunc vivamus vestibulum vestibulum a metus adipiscing arcu purus dictum a odio senectus a ullamcorper laoreet bibendum quis eros vel tempor parturient vestibulum congue fringilla a. Ut leo posuere penatibus egestas egestas blandit a felis lacus suspendisse senectus fusce potenti suspendisse arcu et lobortis metus magnis tempor.<br><br>Suspendisse ad lacinia a at convallis consectetur ipsum rutrum a auctor vivamus suscipit a interdum varius laoreet cubilia adipiscing ac mi. Rhoncus aenean fringilla nec a ad fermentum dis laoreet in cum interdum vestibulum parturient tempor nam. Suspendisse parturient aptent habitant varius cubilia cum vestibulum a dapibus a mi vel suspendisse in vel parturient ornare bibendum a ac orci scelerisque.<br><br>Lacinia a ac etiam suscipit eget eu etiam parturient quis vel in a laoreet ac arcu ut vitae quis torquent hac parturient.Facilisis.', '0000-00-00 00:00:00', '2017-04-28 11:48:47', 0, 1),
@@ -786,6 +811,12 @@ ALTER TABLE `dc_event`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `dc_fasilitas`
+--
+ALTER TABLE `dc_fasilitas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `dc_gallery`
 --
 ALTER TABLE `dc_gallery`
@@ -831,12 +862,6 @@ ALTER TABLE `dc_static_content`
 -- Indexes for table `dc_transaction`
 --
 ALTER TABLE `dc_transaction`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `dc_unit`
---
-ALTER TABLE `dc_unit`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -906,6 +931,11 @@ ALTER TABLE `dc_default`
 ALTER TABLE `dc_event`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `dc_fasilitas`
+--
+ALTER TABLE `dc_fasilitas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `dc_gallery`
 --
 ALTER TABLE `dc_gallery`
@@ -924,12 +954,12 @@ ALTER TABLE `dc_icons`
 -- AUTO_INCREMENT for table `dc_menu`
 --
 ALTER TABLE `dc_menu`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `dc_menu_accsess`
 --
 ALTER TABLE `dc_menu_accsess`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `dc_news`
 --
@@ -945,11 +975,6 @@ ALTER TABLE `dc_static_content`
 --
 ALTER TABLE `dc_transaction`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `dc_unit`
---
-ALTER TABLE `dc_unit`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `dc_user`
 --
