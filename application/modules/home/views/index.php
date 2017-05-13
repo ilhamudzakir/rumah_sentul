@@ -61,10 +61,10 @@
                     <div class="container">
                         <div class="row">
                             
-                            <form>
+                            <form action="<?php echo base_url() ?>unit/search"  method="GET" >
                                 <div class="col-md-12-offset-2">
                                     <div class="col-md-10 search">
-                                        <input type="text" value="" class="form-control cari" placeholder="Cari properti idaman anda" name="search" id="search">
+                                        <input type="text" value="" class="form-control cari" placeholder="Cari properti idaman anda" name="s" id="search">
                                     </div>
                                     <div class="col-md-2 search">
                                         <button type="submit" id="submit-search-button" class="btn btn-action" >

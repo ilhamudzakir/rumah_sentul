@@ -14,6 +14,7 @@ class unit extends DC_controller {
 			$method=str_replace('_',' ',$this->router->fetch_method());
 		}
 		$this->controller_attr = array('controller' => 'unit','controller_name' => 'Unit','method'=>ucwords($method));
+		$this->load->model('model_unit');
 	}
 	
 	 function index(){
@@ -55,6 +56,31 @@ class unit extends DC_controller {
         $data['unit_jual']=$unit_jual;
 		$data['data'] =   $unit;
 		$data['page'] = $this->load->view('unit/detail',$data,true);
+		$this->load->view('layout_frontend',$data);
+	}
+	function search(){
+		$data = $this->controller_attr;
+		$data['function']='unit';
+        //custom
+         if(!isset($_GET['s'])){
+             redirect('home');
+        }
+        $unit=$this->model_unit->get_search($_GET['s']);
+        $unit_total=$this->model_unit->get_search($_GET['s'])->num_rows();
+        $unit=$unit->result();
+        foreach ($unit as $key) {
+            $album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
+            $key->id_image=$album->id;
+            $key->image=$album->images;
+            $brand=select_where($this->tbl_brand,'id',$key->id_brand)->row();
+            $key->brand=$brand->title;
+            $kondisi=select_where($this->tbl_condition,'id',$key->id_condition)->row();
+            $key->kondisi=$kondisi->title;
+        }
+        $data['unit_total']=$unit_total;
+        $data['get_search']='Search '.$_GET['s'];
+        $data['data']=$unit;
+        $data['page'] = $this->load->view('unit/search',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 
