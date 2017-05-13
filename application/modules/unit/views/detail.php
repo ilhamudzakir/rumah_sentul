@@ -122,9 +122,11 @@ $no++;
 												<button  type="button" class="btn btn-default contact-agent-btn" data-toggle="modal" data-target="#ContactModal"><i class="fa fa-phone"></i><span>Kontak Kami</span></button> 
 										</div>
 								</div>
+
+								
 								<div class="col-sm-8 right pd btn-infol">
 										<div class="price-info">
-											<a href="" class="btn btn-default contact-agent-btn"><i class="fa fa-eye"></i><span>Lihat List Harga</span></a>
+											<a href="<?php echo base_url() ?>assets/uploads/file-unit/<?php echo $data->id ?>/<?php echo $data->fileUpload ?>" target=_blank class="btn btn-default contact-agent-btn"><i class="fa fa-eye"></i><span>Lihat List Harga</span></a>
 										
 										</div>
 								</div>

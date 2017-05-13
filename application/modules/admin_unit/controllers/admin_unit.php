@@ -63,10 +63,16 @@ class admin_unit extends DC_controller {
         foreach ($table_field as $field) {
             $update[$field] = $this->input->post($field);
         }
+        if(empty($_FILES['fileUpload']['name'])){
+        	$update['fileUpload']= str_replace(" ","_",$unit->images);
+        }else{
+        	 $update['fileUpload']=  str_replace(" ","_",$_FILES['fileUpload']['name']);
+        }
         $update['quick_view']= $unit->quick_view;
         $update['date_modified']= date("Y-m-d H:i:s");
         $update['id_modifier']=$this->session->userdata['admin']['id'];
         $query=update($this->tbl_unit,$update,'id',$id);
+
 		if($query){
 			if(!empty($_FILES['fileUpload']['name'])){
 			if (!file_exists('assets/uploads/file-unit/'.$unit->id)) {
@@ -100,7 +106,11 @@ class admin_unit extends DC_controller {
         foreach ($table_field as $field) {
             $insert[$field] = $this->input->post($field);
         }
-        
+         if(empty($_FILES['fileUpload']['name'])){
+        	$update['fileUpload']= str_replace(" ","_",$unit->images);
+        }else{
+        	 $update['fileUpload']=  str_replace(" ","_",$_FILES['fileUpload']['name']);
+        }
         $insert['date_created']= date("Y-m-d H:i:s");
         $insert['id_creator']=$this->session->userdata['admin']['id'];
         $query=insert_all($this->tbl_unit,$insert);
