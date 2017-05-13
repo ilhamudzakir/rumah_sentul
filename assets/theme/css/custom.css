@@ -665,6 +665,10 @@ a, a:hover, a:focus {
 
 /* rifan */
 
+.sidebar-bn{
+	max-width: 100%;
+}
+
 .btn-infol{
 	margin-top: 8px;
 }

@@ -25,6 +25,11 @@
 									</div>
 									<?php } ?>
 
+									<div class="row">
+										<div class="col-md-12">
+											<img class="sidebar-bn" src="<?php echo base_url()."/assets/theme/img/sentul/safron.jpg"?>"  /> 
+										</div>
+									</div>
 
 									<div class="row">
 										<div class="col-md-12 page-fb">
