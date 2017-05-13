@@ -28,7 +28,7 @@
 
 									<div class="row">
 										<div class="col-md-12 page-fb">
-											<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPT-Flip-Flops-Solution-623119867764470%2F&tabs=timeline&width=340&height=417&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=254507101579491" width="100%" height="370px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+										<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FRumahrumahsentulcity&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=254507101579491" width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 										</div>
 									</div>
 
