@@ -665,6 +665,10 @@ a, a:hover, a:focus {
 
 /* rifan */
 
+.btn-infol{
+	margin-top: 8px;
+}
+
 .thumb-info-caption .thumb-info-caption-text, .thumb-info-caption p {
     
     margin: 0 0 20px !important;

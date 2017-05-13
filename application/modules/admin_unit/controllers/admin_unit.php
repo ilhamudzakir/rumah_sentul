@@ -68,6 +68,21 @@ class admin_unit extends DC_controller {
         $update['id_modifier']=$this->session->userdata['admin']['id'];
         $query=update($this->tbl_unit,$update,'id',$id);
 		if($query){
+			if(!empty($_FILES['fileUpload']['name'])){
+			if (!file_exists('assets/uploads/file-unit/'.$unit->id)) {
+    				mkdir('assets/uploads/file-unit/'.$unit->id, 0777, true);
+			 }
+        	 $config['upload_path'] = 'assets/uploads/file-unit/'.$unit->id;
+             $config['allowed_types'] = 'pdf';
+             $config['file_name'] = $_FILES['fileUpload']['name'];
+             $this->upload->initialize($config);
+             if($this->upload->do_upload('fileUpload')){
+                    $uploadData = $this->upload->data();
+                }else{
+                    echo"error upload";
+                    die();
+              }
+          }
 			$this->session->set_flashdata('notif','success');
 			$this->session->set_flashdata('msg','Your data have been updated');
 		}else{
@@ -90,6 +105,21 @@ class admin_unit extends DC_controller {
         $insert['id_creator']=$this->session->userdata['admin']['id'];
         $query=insert_all($this->tbl_unit,$insert);
 		if($query){
+			if(!empty($_FILES['fileUpload']['name'])){
+			if (!file_exists('assets/uploads/file-unit/'.$this->db->insert_id())) {
+    				mkdir('assets/uploads/file-unit/'.$this->db->insert_id(), 0777, true);
+			 }
+        	 $config['upload_path'] = 'assets/uploads/file-unit/'.$this->db->insert_id();
+             $config['allowed_types'] = 'pdf';
+             $config['file_name'] = $_FILES['fileUpload']['name'];
+             $this->upload->initialize($config);
+             if($this->upload->do_upload('fileUpload')){
+                    $uploadData = $this->upload->data();
+                }else{
+                    echo"error upload";
+                    die();
+              }
+          }
 			$this->session->set_flashdata('notif','success');
 			$this->session->set_flashdata('msg','Your data have been added');
 		}else{
