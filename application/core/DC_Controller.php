@@ -33,6 +33,7 @@ class DC_Controller extends CI_Controller {
         $this->tbl_event= $this->tbl_prefix .'event';
         $this->tbl_video= $this->tbl_prefix .'video';
         $this->tbl_gallery= $this->tbl_prefix .'gallery';
+        $this->tbl_fasilitas= $this->tbl_prefix .'fasilitas';
         
 
         //load model fo all page

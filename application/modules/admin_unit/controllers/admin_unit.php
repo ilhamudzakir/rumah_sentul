@@ -728,5 +728,127 @@ class admin_unit extends DC_controller {
 		}
 		redirect($data['controller']);
 	}
+
+
+	function fasilitas(){
+		$this->check_access();
+		$data = $this->controller_attr;
+		$data['function']='fasilitas';
+		$data['list']=select_all($this->tbl_fasilitas);
+		$data['page'] = $this->load->view('admin_unit/list_fasilitas',$data,true);
+		$this->load->view('layout_backend',$data);
+	}
+
+	function fasilitas_form($id=null){
+		$this->check_access();
+		$data = $this->controller_attr;
+		$data['function']='fasilitas';
+		if ($id) {
+            $data['data'] = select_where($this->tbl_fasilitas, 'id', $id)->row();
+        }
+        else{
+            $data['data'] = null;
+        }
+		$data['page'] = $this->load->view('admin_unit/fasilitas_form',$data,true);
+		$this->load->view('layout_backend',$data);
+	}
+
+	function fasilitas_update(){
+		$data = $this->controller_attr;
+		$data['function']='fasilitas';
+		$id=$this->input->post('id');
+		$table_field = $this->db->list_fields($this->tbl_news);
+		$fasilitas=select_where($this->tbl_fasilitas,'id',$id)->row();
+		$update = array();
+        foreach ($table_field as $field) {
+            $update[$field] = $this->input->post($field);
+        }
+        if(empty($_FILES['images']['name'])){
+        	$update['images']=$fasilitas->images;
+        }else{
+        	 $update['images']=$_FILES['images']['name'];
+        }
+        $update['date_modified']= date("Y-m-d H:i:s");
+        $update['id_modifier']=$this->session->userdata['admin']['id'];
+        $query=update($this->tbl_news,$update,'id',$id);
+		if($query){
+			if(!empty($_FILES['images']['name'])){
+			unlink('assets/uploads/fasilitas/'.$id.'/'.$fasilitas->images);
+			if (!file_exists('assets/uploads/fasilitas/'.$id)) {
+    				mkdir('assets/uploads/fasilitas/'.$id, 0777, true);
+			 }
+        	 $config['upload_path'] = 'assets/uploads/fasilitas/'.$id;
+             $config['allowed_types'] = 'jpg|jpeg|png|gif';
+             $config['file_name'] = $_FILES['images']['name'];
+             $this->upload->initialize($config);
+             if($this->upload->do_upload('images')){
+                    $uploadData = $this->upload->data();
+                }else{
+                    echo"error upload";
+                    die();
+              }
+          }
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been updated');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not updated');
+		}
+		redirect($data['controller']."/".$data['function']);
+	}
+
+	function fasilitas_add(){
+		$data = $this->controller_attr;
+		$data['function']='fasilitas';
+		$table_field = $this->db->list_fields($this->tbl_fasilitas);
+		$insert = array();
+        foreach ($table_field as $field) {
+            $insert[$field] = $this->input->post($field);
+        }
+        if(empty($_FILES['images']['name'])){
+        	$insert['images']=='';
+        }else{
+        	 $insert['images']=$_FILES['images']['name'];
+        }
+        $insert['date_created']= date("Y-m-d H:i:s");
+        $insert['id_creator']=$this->session->userdata['admin']['id'];
+        $query=insert_all($this->tbl_fasilitas,$insert);
+		if($query){
+			if(!empty($_FILES['images']['name'])){
+			if (!file_exists('assets/uploads/fasilitas/'.$this->db->insert_id())) {
+    				mkdir('assets/uploads/fasilitas/'.$this->db->insert_id(), 0777, true);
+			 }
+        	 $config['upload_path'] = 'assets/uploads/fasilitas/'.$this->db->insert_id();
+             $config['allowed_types'] = 'jpg|jpeg|png|gif';
+             $config['file_name'] = $_FILES['images']['name'];
+             $this->upload->initialize($config);
+             if($this->upload->do_upload('images')){
+                    $uploadData = $this->upload->data();
+                }else{
+                    echo"error upload";
+                    die();
+              }
+          }
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been added');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not added');
+		}
+		redirect($data['controller']."/".$data['function']);
+	}
+
+	function fasilitas_delete($id){
+		$data = $this->controller_attr;
+		$function='fasilitas';
+		$query=delete($this->tbl_fasilitas,'id',$id);
+		if($query){
+			$this->session->set_flashdata('notif','success');
+			$this->session->set_flashdata('msg','Your data have been deleted');
+		}else{
+			$this->session->set_flashdata('notif','error');
+			$this->session->set_flashdata('msg','Your data not deleted');
+		}
+	}
 }
 

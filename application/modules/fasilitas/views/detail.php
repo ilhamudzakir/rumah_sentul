@@ -32,7 +32,7 @@
 				
 				
 					<div class="item active">
-					  <img src="<?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?>" alt="<?php echo $data->title ?>" class="img-responsive">
+					  <img src="<?php echo base_url() ?>assets/uploads/fasilitas/<?php echo $data->id?>/<?php echo $data->images ?>" alt="<?php echo $data->title ?>" class="img-responsive">
 					</div>
 
 				
@@ -50,9 +50,7 @@
 					<div class="listing-history-info">
 					<i class="fa fa-clock-o"></i><?php echo get_date($data->date_created);?> 
 				</div>
-
 					<?php echo $data->content ?>
-
 
 					<div class="post-block post-share">
 						<h3 class="heading-primary"><i class="fa fa-share"></i>Share this post</h3>

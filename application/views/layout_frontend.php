@@ -11,7 +11,7 @@
     <!-- for Google -->
 
   <?php if($this->uri->segment('2')=='detail'){ ?>
-    <meta name="description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
+    <meta name="description" content="<?php if ($this->uri->segment('1')=='news' or $this->uri->segment('1')=='fasilitas'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
     <meta name="keywords" content="rumah dijual sentul bogor,rumah di sentul bogor,jual rumah murah,jual rumah,jual rumah bogor,rumah dijual murah,dijual rumah,jual rumahsentul bogor,rumah dijual di sentul bogor,jual rumah mutiara sentul bogor,jual rumah mega sentul bogor,jual rumah sentul city bogor,rumah dijual sentul city bogor,rumah dijual di bukit sentul bogor,rumah apung sentul bogor,rumah mewah dijual,rumah minimalis dijual,olx rumah dijual,rumah kontrakan dijual,jual rumah bogor murah,jual rumah bogor kota 2017,jual rumah bogor olx,jual rumah bogor utara,jual rumah bogor barat,jual rumah bogor asri cibinong,dijual rumah bogor asri,jual rumah di bogor asri cibinong,jual rumah ambar bogor regency,sewa rumah bogor 2017,sewa rumah bogor selatan,sewa rumah bogor barat,sewa rumah bogor olx,sewa rumah bogor timur,sewa rumah bogor raya,sewa rumah bogor tengah,sewa rumah di bogor asri,jual apartemen bogor icon,apartemen bogor,apartemen bogor valley,apartemen bogor icon,harga apartemen bogor" /> 
 
 
@@ -22,16 +22,16 @@
     <!-- for Facebook -->
     <meta property="og:title" content="<?php echo $data->title ?>" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" />
+    <meta property="og:image" content="<?php if($this->uri->segment('1')=='fasilitas'){ ?> <?php echo base_url() ?>assets/uploads/fasilitas/<?php echo $data->id?>/<?php echo $data->images ?><?php }elseif($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" />
     <meta property="og:url" content="<?php if($this->uri->segment('1')=='news'){ echo base_url()."news/detail/".$data->id."/".url_title($data->title); }else{ echo base_url()."unit/detail/".$data->id."/".url_title($data->title);} ?>" />
-    <meta property="og:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" /> 
+    <meta property="og:description" content="<?php if ($this->uri->segment('1')=='news' or $this->uri->segment('1')=='fasilitas'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" /> 
 
     <!-- for Twitter -->
      <meta name="twitter:card" content="summary" />
 
     <meta name="twitter:title" content="<?php echo $data->title?>" />
-    <meta name="twitter:description" content="<?php if ($this->uri->segment('1')=='news'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
-    <meta name="twitter:image" content="<?php if($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" /> 
+    <meta name="twitter:description" content="<?php if ($this->uri->segment('1')=='news' or $this->uri->segment('1')=='fasilitas'){ echo strip_tags($data->content); }else{ echo strip_tags($data->description);  }?>" />
+    <meta name="twitter:image" content="<?php if($this->uri->segment('1')=='fasilitas'){ ?> <?php echo base_url() ?>assets/uploads/fasilitas/<?php echo $data->id?>/<?php echo $data->images ?><?php }elseif($this->uri->segment('1')=='news'){ ?> <?php echo base_url() ?>assets/uploads/news/<?php echo $data->id?>/<?php echo $data->images ?><?php }else{ ?><?php echo base_url() ?>assets/uploads/album-unit/<?php echo $data->id_image ?>/<?php echo $data->image ?><?php }?>" /> 
 
 <?php }else{?>
 

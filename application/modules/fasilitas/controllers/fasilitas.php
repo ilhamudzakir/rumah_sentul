@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
 	exit('No direct script access allowed');
 
 
-class news extends DC_controller {
+class fasilitas extends DC_controller {
 
 	function __construct() {
 		parent::__construct();
@@ -18,7 +18,7 @@ class news extends DC_controller {
 	
 	 function index(){
 		$data = $this->controller_attr;
-		$data['function']='news';
+		$data['function']='Fasilitas';
 		
 		//custom
          		 $data['meta_title']='rumah rumah sentul';
@@ -26,9 +26,8 @@ class news extends DC_controller {
           $data['meta_keywords'] ='rumah di jual,beli rumah,bogor,asri bogor, rumah indah di bogor, view mountain, sentul city, apartment,pemandangan indah,harga murah,harga terjangkau, invesstasi';
           $data['meta_site_name'] ='RumahSentul.com';
           $data['meta_image']='RumahSentul.com';
-        
-        $data['data']=select_all($this->tbl_news);
-		$data['page'] = $this->load->view('news/index',$data,true);
+        $data['data']=select_all($this->tbl_fasilitas);
+		$data['page'] = $this->load->view('fasilitas/index',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 	
@@ -36,7 +35,7 @@ class news extends DC_controller {
 		$data = $this->controller_attr;
 		$data['function']='detail';
 		
-		$data['data'] = select_where($this->tbl_news,'id',$id)->row();
+		$data['data'] = select_where($this->tbl_fasilitas,'id',$id)->row();
         
         $unit_jual=select_all_limit_random($this->tbl_unit,5);
         foreach ($unit_jual as $key) {
@@ -45,7 +44,7 @@ class news extends DC_controller {
         	$key->image=$album->images;
         }
         $data['unit_jual']=$unit_jual;
-		$data['page'] = $this->load->view('news/detail',$data,true);
+		$data['page'] = $this->load->view('fasilitas/detail',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 }
