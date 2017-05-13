@@ -5,10 +5,10 @@
 					<div class="container">
 						<div class="row">
 							
-							<form>
+							<form action="<?php echo base_url() ?>unit/search"  method="GET" >
 								<div class="col-md-12-offset-2">
 									<div class="col-md-10 search">
-										<input type="text" value="" class="form-control cari" placeholder="Cari properti idaman anda" name="search" id="search">
+										<input type="text" value="" class="form-control cari" placeholder="Cari properti idaman anda" name="s" id="search">
 									</div>
 									<div class="col-md-2 search">
 										<button type="submit" id="submit-search-button" class="btn btn-action" >
@@ -27,8 +27,8 @@
 								<div id="">
 									<div class="col-md-12 bb">
 										<div class="col-sm-6 btl breadcumb">
-											<span class="spb"><?php echo $status ?></span>
-											<span class="litle_spb">( <?php echo $unit_total." ".$breadcumb ?>  ) </span>
+											<span class="spb">Search <?php echo $_GET['s'] ?></span>
+											<span class="litle_spb">( <?php echo $unit_total ?>  ) </span>
 										</div>
 									</div>
 								
@@ -92,22 +92,15 @@
 											</div>
 											<div class="clearfix"></div>
 										</div>
-										<?php }else{ ?>
+										<?php }} else { ?>
 										<div class="row-content text-ceter">
+										<div class="col-md-12 text-center">
+											<br><br><br>
 										<h3> Search is not found</h3>
+										</div>
 										</div>
 										<?php } ?>
 
-										<div id="serp-pagination" class="serp-pagination">
-											<div class="row">
-												<div class="col-sm-12">
-													
-													<div class="serp-paging">
-														<?php echo $paging ?>
-													</div>
-												</div>
-											</div>
-										</div>
 									</div>
 								
 								</div>

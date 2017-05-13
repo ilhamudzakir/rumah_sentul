@@ -66,7 +66,7 @@ class unit extends DC_controller {
              redirect('home');
         }
         $unit=$this->model_unit->get_search($_GET['s']);
-        $unit_total=select_where_array_order($this->tbl_unit,$array_search,'date_created','DESC')->num_rows();
+        $unit_total=$this->model_unit->get_search($_GET['s'])->num_rows();
         $unit=$unit->result();
         foreach ($unit as $key) {
             $album=select_where($this->tbl_album_unit,'id_unit',$key->id)->row();
@@ -80,8 +80,7 @@ class unit extends DC_controller {
         $data['unit_total']=$unit_total;
         $data['get_search']='Search '.$_GET['s'];
         $data['data']=$unit;
-		$data['paging']=$this->pagination_param(base_url()."category/populer/page/",10,$unit_total);
-        $data['page'] = $this->load->view('category/index',$data,true);
+        $data['page'] = $this->load->view('unit/search',$data,true);
 		$this->load->view('layout_frontend',$data);
 	}
 
